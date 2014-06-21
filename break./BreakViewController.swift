@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BreakViewController.swift
 //  break.
 //
 //  Created by Andrew Clissold on 6/15/14.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-                            
+class BreakViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
