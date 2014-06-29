@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    @IBOutlet var doNotDisturbSwitch: UISwitch
+
     @IBAction func back() {
         dismissViewControllerAnimated(true, completion: nil)
     }
