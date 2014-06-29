@@ -81,7 +81,6 @@ when you configure them in settings.</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -93,10 +92,9 @@ when you configure them in settings.</string>
             <objects>
                 <tableViewController id="Xac-jl-kvh" customClass="SettingsViewController" customModule="break_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eqR-ea-mcR">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection headerTitle="Do Not Disturb" footerTitle="All other settings will be overriden and notifications will be silenced when Do Not Disturb is enabled." id="R4f-78-cfb">
                                 <cells>
@@ -213,21 +211,33 @@ when you configure them in settings.</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" id="b8a-nu-ndU">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="74" id="b8a-nu-ndU">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b8a-nu-ndU" id="bql-E3-ERw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From 8:00 AM To 11:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6H-1C-OX5">
-                                                    <rect key="frame" x="20" y="11" width="210" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="j6H-1C-OX5">
+                                                    <rect key="frame" x="20" y="11" width="40" height="51"/>
+                                                    <string key="text">From
+To</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="74" translatesAutoresizingMaskIntoConstraints="NO" id="tv4-IR-Wxj">
+                                                    <rect key="frame" x="372" y="16" width="74" height="41"/>
+                                                    <string key="text">8:00 AM
+11:00 PM</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="j6H-1C-OX5" firstAttribute="leading" secondItem="bql-E3-ERw" secondAttribute="leading" constant="20" id="5ch-GH-JRy"/>
+                                                <constraint firstAttribute="trailing" secondItem="tv4-IR-Wxj" secondAttribute="trailing" constant="8" id="G57-nP-rtu"/>
                                                 <constraint firstAttribute="centerY" secondItem="j6H-1C-OX5" secondAttribute="centerY" id="e9T-qj-kCH"/>
+                                                <constraint firstItem="tv4-IR-Wxj" firstAttribute="top" secondItem="bql-E3-ERw" secondAttribute="top" constant="16" id="gon-sZ-RPM"/>
                                                 <constraint firstItem="j6H-1C-OX5" firstAttribute="top" secondItem="bql-E3-ERw" secondAttribute="top" constant="11" id="pud-la-eiH"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -296,7 +306,7 @@ when you configure them in settings.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtR-kf-zHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1754" y="441"/>
+            <point key="canvasLocation" x="1754" y="440"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tkU-2u-2HA">
