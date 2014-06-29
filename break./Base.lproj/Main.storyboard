@@ -158,6 +158,29 @@ when you configure them in settings.</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" rowHeight="216" id="njG-Jp-qRM">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="njG-Jp-qRM" id="66y-AL-Qvw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-Bt-ZeI">
+                                                    <rect key="frame" x="80" y="0.0" width="320" height="216"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="216" id="BVr-BB-erY"/>
+                                                        <constraint firstAttribute="width" constant="320" id="QKm-X9-RTl"/>
+                                                    </constraints>
+                                                    <date key="date" timeIntervalSinceReferenceDate="425746881.96216702">
+                                                        <!--<__NSDate Class=2014-06-29 15:01:21 +0000 timeInterval=425746881.962167 ISO8601=2014-06-29T11:01:21.962-0400>-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="eHF-Bt-ZeI" secondAttribute="centerX" id="CXM-QQ-3MJ"/>
+                                                <constraint firstAttribute="centerY" secondItem="eHF-Bt-ZeI" secondAttribute="centerY" id="z9R-SA-mTV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Alerts" id="eeP-cA-EJo">
@@ -242,6 +265,9 @@ when you configure them in settings.</string>
                         </sections>
                         <variation key="widthClass=compact" ambiguous="YES">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        </variation>
+                        <variation key="widthClass=regular" ambiguous="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
