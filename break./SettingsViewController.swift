@@ -11,9 +11,54 @@ import UIKit
 class SettingsViewController: UITableViewController {
 
     @IBOutlet var doNotDisturbSwitch: UISwitch
+    @IBOutlet var datePicker: UIDatePicker
+
+    let untilCellID = "untilCell"
+    let datePickerIndexPath = NSIndexPath(forRow: 1, inSection: 1)
+
+    var datePickerIsVisible = true
 
     @IBAction func back() {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+
+        if cell.reuseIdentifier == untilCellID {
+            let datePickerIndexPath = NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)
+            toggleDatePicker()
+        }
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
+    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        if !datePickerIsVisible && section == 1 {
+            return 1
+        } else {
+            return section + 1 // convenient coincidence
+        }
+
+    }
+
+    func toggleDatePicker() {
+
+        tableView.beginUpdates()
+
+        if datePickerIsVisible {
+            datePickerIsVisible = !datePickerIsVisible
+            tableView.deleteRowsAtIndexPaths([datePickerIndexPath], withRowAnimation: .Fade)
+        } else {
+            datePickerIsVisible = !datePickerIsVisible
+            tableView.insertRowsAtIndexPaths([datePickerIndexPath], withRowAnimation: .Fade)
+        }
+
+        tableView.endUpdates()
+    }
+
+    override func viewDidLoad() {
+        toggleDatePicker()
     }
 
 }
