@@ -12,6 +12,9 @@ class SettingsViewController: UITableViewController {
 
     @IBOutlet var doNotDisturbSwitch: UISwitch
     @IBOutlet var datePicker: UIDatePicker
+    @IBOutlet var untilCell: UITableViewCell
+    @IBOutlet var untilLabel: UILabel
+    @IBOutlet var untilDateLabel: UILabel
 
     let untilCellID = "untilCell"
     let datePickerIndexPath = NSIndexPath(forRow: 1, inSection: 1)
@@ -42,8 +45,22 @@ class SettingsViewController: UITableViewController {
 
     }
 
-    func toggleDatePicker() {
+    @IBAction func toggleUntilCell(sender: UISwitch) {
+        if sender.on {
+            untilCell.userInteractionEnabled = true
+            untilLabel.textColor = UIColor.blackColor()
+            untilDateLabel.textColor = UIColor.blackColor()
+        } else {
+            untilCell.userInteractionEnabled = false
+            untilLabel.textColor = UIColor.lightGrayColor()
+            untilDateLabel.textColor = UIColor.lightGrayColor()
+            if datePickerIsVisible {
+                toggleDatePicker()
+            }
+        }
+    }
 
+    func toggleDatePicker() {
         tableView.beginUpdates()
 
         if datePickerIsVisible {

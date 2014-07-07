@@ -108,6 +108,9 @@ when you configure them in settings.</string>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dJM-AQ-6bK">
                                                     <rect key="frame" x="411" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.2255783616" green="0.0" blue="0.24051339290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="toggleUntilCell:" destination="Xac-jl-kvh" eventType="valueChanged" id="PGj-Ij-8yi"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do Not Disturb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-E5-te1">
                                                     <rect key="frame" x="20" y="11" width="115" height="21"/>
@@ -130,7 +133,7 @@ when you configure them in settings.</string>
                             </tableViewSection>
                             <tableViewSection id="9m5-cy-wHc">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="untilCell" id="kO9-ix-t2Q">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="untilCell" id="kO9-ix-t2Q">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kO9-ix-t2Q" id="G1B-WJ-A9D">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -138,13 +141,13 @@ when you configure them in settings.</string>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Until" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFG-ID-Lxk">
                                                     <rect key="frame" x="20" y="11" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat Jun 21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfl-fU-DjO">
-                                                    <rect key="frame" x="377" y="11" width="83" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat Jun 21 at 9:50 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfl-fU-DjO">
+                                                    <rect key="frame" x="289" y="11" width="171" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -314,6 +317,9 @@ To</string>
                     <connections>
                         <outlet property="datePicker" destination="eHF-Bt-ZeI" id="Y3O-up-7nF"/>
                         <outlet property="doNotDisturbSwitch" destination="dJM-AQ-6bK" id="GE9-AK-krm"/>
+                        <outlet property="untilCell" destination="kO9-ix-t2Q" id="mpU-ZQ-TfU"/>
+                        <outlet property="untilDateLabel" destination="Yfl-fU-DjO" id="uar-UR-Ahx"/>
+                        <outlet property="untilLabel" destination="XFG-ID-Lxk" id="MgX-d5-ne9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtR-kf-zHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
