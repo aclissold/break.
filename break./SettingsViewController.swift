@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
-    @IBOutlet var doNotDisturbSwitch: UISwitch
+    @IBOutlet var silenceSwitch: UISwitch
     @IBOutlet var datePicker: UIDatePicker
     @IBOutlet var untilCell: UITableViewCell
     @IBOutlet var untilLabel: UILabel

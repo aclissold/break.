@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4bl-y1-liP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4bl-y1-liP">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
     </dependencies>
     <scenes>
         <!--Break View Controller-->
@@ -81,14 +81,13 @@ when you configure them in settings.</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="379" y="441"/>
         </scene>
-        <!--Settings View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="pxL-K1-lKb">
             <objects>
                 <tableViewController id="Xac-jl-kvh" customClass="SettingsViewController" customModule="break_" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,11 +95,10 @@ when you configure them in settings.</string>
                         <rect key="frame" x="0.0" y="64" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
-                            <tableViewSection headerTitle="Do Not Disturb" footerTitle="All other settings will be overriden and notifications will be silenced when Do Not Disturb is enabled." id="R4f-78-cfb">
+                            <tableViewSection headerTitle="Silence" footerTitle="All other settings will be overriden and notifications will be silenced while enabled." id="R4f-78-cfb">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="doNotDisturbCell" id="c5Q-cJ-VMD">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="silenceCell" id="c5Q-cJ-VMD" userLabel="silenceCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c5Q-cJ-VMD" id="UyK-Fa-N8f">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -112,8 +110,8 @@ when you configure them in settings.</string>
                                                         <action selector="toggleUntilCell:" destination="Xac-jl-kvh" eventType="valueChanged" id="PGj-Ij-8yi"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do Not Disturb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-E5-te1">
-                                                    <rect key="frame" x="20" y="11" width="115" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silence Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-E5-te1">
+                                                    <rect key="frame" x="20" y="11" width="157" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -174,7 +172,7 @@ when you configure them in settings.</string>
                                                         <constraint firstAttribute="width" constant="320" id="QKm-X9-RTl"/>
                                                     </constraints>
                                                     <date key="date" timeIntervalSinceReferenceDate="425746881.96216702">
-                                                        <!--<__NSDate Class=2014-06-29 15:01:21 +0000 timeInterval=425746881.962167 ISO8601=2014-06-29T11:01:21.962-0400>-->
+                                                        <!--2014-06-29 15:01:21 +0000-->
                                                     </date>
                                                 </datePicker>
                                             </subviews>
@@ -193,7 +191,7 @@ when you configure them in settings.</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0rb-M7-3ef" id="SkM-yo-Ze5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every 60 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m69-UV-Rkr">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Every 60 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m69-UV-Rkr">
                                                     <rect key="frame" x="314" y="11" width="132" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,7 +230,7 @@ To</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="74" translatesAutoresizingMaskIntoConstraints="NO" id="tv4-IR-Wxj">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="74" translatesAutoresizingMaskIntoConstraints="NO" id="tv4-IR-Wxj">
                                                     <rect key="frame" x="372" y="16" width="74" height="41"/>
                                                     <string key="text">8:00 AM
 11:00 PM</string>
@@ -264,7 +262,7 @@ To</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekdays" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-wm-tc9">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weekdays" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-wm-tc9">
                                                     <rect key="frame" x="367" y="11" width="79" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -316,7 +314,7 @@ To</string>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="eHF-Bt-ZeI" id="Y3O-up-7nF"/>
-                        <outlet property="doNotDisturbSwitch" destination="dJM-AQ-6bK" id="GE9-AK-krm"/>
+                        <outlet property="silenceSwitch" destination="dJM-AQ-6bK" id="fSR-So-TTl"/>
                         <outlet property="untilCell" destination="kO9-ix-t2Q" id="mpU-ZQ-TfU"/>
                         <outlet property="untilDateLabel" destination="Yfl-fU-DjO" id="uar-UR-Ahx"/>
                         <outlet property="untilLabel" destination="XFG-ID-Lxk" id="MgX-d5-ne9"/>
@@ -334,7 +332,6 @@ To</string>
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection id="c0x-Ob-QR0">
                                 <cells>
@@ -476,7 +473,6 @@ To</string>
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection id="CPw-Qu-Cdd">
                                 <cells>
@@ -534,7 +530,7 @@ To</string>
                                                         <constraint firstAttribute="height" constant="216" id="J0x-mF-CCR"/>
                                                     </constraints>
                                                     <date key="date" timeIntervalSinceReferenceDate="426391774.13639802">
-                                                        <!--<__NSDate Class=2014-07-07 02:09:34 +0000 timeInterval=426391774.136398 ISO8601=2014-07-06T22:09:34.136-0400>-->
+                                                        <!--2014-07-07 02:09:34 +0000-->
                                                     </date>
                                                 </datePicker>
                                             </subviews>
@@ -565,7 +561,6 @@ To</string>
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection id="cqG-aX-H1p">
                                 <cells>
