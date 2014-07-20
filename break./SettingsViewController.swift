@@ -45,8 +45,13 @@ class SettingsViewController: UITableViewController {
 
     }
 
-    @IBAction func toggleUntilCell(sender: UISwitch) {
-        if sender.on {
+    @IBAction func silenceSwitchToggled(sender: UISwitch) {
+        Settings.silence = sender.on
+        toggleUntilCell(sender.on)
+    }
+
+    func toggleUntilCell(on: Bool) {
+        if on {
             untilCell.userInteractionEnabled = true
             untilLabel.textColor = UIColor.blackColor()
             untilDateLabel.textColor = UIColor.blackColor()

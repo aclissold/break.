@@ -107,7 +107,7 @@ when you configure them in settings.</string>
                                                     <rect key="frame" x="411" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.2255783616" green="0.0" blue="0.24051339290000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
-                                                        <action selector="toggleUntilCell:" destination="Xac-jl-kvh" eventType="valueChanged" id="PGj-Ij-8yi"/>
+                                                        <action selector="silenceSwitchToggled:" destination="Xac-jl-kvh" eventType="valueChanged" id="cZB-f4-cTb"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silence Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-E5-te1">
