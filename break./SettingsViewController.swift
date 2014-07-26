@@ -10,11 +10,11 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
-    @IBOutlet var silenceSwitch: UISwitch
-    @IBOutlet var datePicker: UIDatePicker
-    @IBOutlet var untilCell: UITableViewCell
-    @IBOutlet var untilLabel: UILabel
-    @IBOutlet var untilDateLabel: UILabel
+    @IBOutlet weak var silenceSwitch: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var untilCell: UITableViewCell!
+    @IBOutlet weak var untilLabel: UILabel!
+    @IBOutlet weak var untilDateLabel: UILabel!
 
     let untilCellID = "untilCell"
     let datePickerIndexPath = NSIndexPath(forRow: 1, inSection: 1)
