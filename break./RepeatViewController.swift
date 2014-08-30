@@ -22,7 +22,14 @@ class RepeatViewController: UITableViewController {
         if cell === previousCell { return }
 
         let repeat = (cell.contentView.subviews[0] as UILabel).text
-        Settings.repeat = repeat
+        switch repeat {
+        case "Weekdays":
+            Settings.repeat = .CalendarUnitWeekday
+        case "Daily":
+            Settings.repeat = .CalendarUnitDay
+        default:
+            Settings.repeat = .CalendarUnitWeekday
+        }
 
         cell.accessoryType = .Checkmark
 

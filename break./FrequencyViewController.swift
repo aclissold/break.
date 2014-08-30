@@ -11,7 +11,7 @@ import UIKit
 class FrequencyViewController: UITableViewController {
 
     var previousCell: UITableViewCell?
-    let timeIntervals: [NSTimeInterval] = [20*60, 30*60, 60*60, 90*60]
+    let frequencies = [20, 30, 60, 90]
 
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         selectCellAtIndexPath(indexPath)
@@ -23,7 +23,7 @@ class FrequencyViewController: UITableViewController {
         if cell === previousCell { return }
 
         if indexPath.section == 0 {
-            Settings.frequency = timeIntervals[indexPath.row]
+            Settings.frequency = Frequency.fromRaw(frequencies[indexPath.row])!
         }
 
         cell.accessoryType = .Checkmark
