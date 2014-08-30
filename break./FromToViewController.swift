@@ -22,9 +22,8 @@ class FromToViewController: UITableViewController {
         if !datePickerIsVisible {
             tableView.beginUpdates()
             tableView.insertRowsAtIndexPaths([datePickerIndexPath], withRowAnimation: .Fade)
-            tableView.endUpdates()
-
             datePickerIsVisible = true
+            tableView.endUpdates()
         }
     }
 
