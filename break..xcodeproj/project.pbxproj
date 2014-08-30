@@ -16,6 +16,10 @@
 		224D6323194DF65100698EDE /* BreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224D6322194DF65100698EDE /* BreakViewController.swift */; };
 		224D6326194DF65100698EDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224D6324194DF65100698EDE /* Main.storyboard */; };
 		224D6328194DF65100698EDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224D6327194DF65100698EDE /* Images.xcassets */; };
+		2292C4F819B1560C00CB8C45 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292C4F719B1560C00CB8C45 /* FrequencyViewController.swift */; };
+		2292C4FA19B1566E00CB8C45 /* FromToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292C4F919B1566E00CB8C45 /* FromToViewController.swift */; };
+		2292C4FC19B1567D00CB8C45 /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292C4FB19B1567D00CB8C45 /* RepeatViewController.swift */; };
+		2292C4FE19B157A900CB8C45 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292C4FD19B157A900CB8C45 /* p.swift */; };
 		22AE23E3197B48AE00A2AD73 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE23E2197B48AE00A2AD73 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,10 @@
 		224D6322194DF65100698EDE /* BreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakViewController.swift; sourceTree = "<group>"; };
 		224D6325194DF65100698EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		224D6327194DF65100698EDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2292C4F719B1560C00CB8C45 /* FrequencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
+		2292C4F919B1566E00CB8C45 /* FromToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromToViewController.swift; sourceTree = "<group>"; };
+		2292C4FB19B1567D00CB8C45 /* RepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatViewController.swift; sourceTree = "<group>"; };
+		2292C4FD19B157A900CB8C45 /* p.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
 		22AE23E2197B48AE00A2AD73 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,11 +141,15 @@
 		224D631D194DF65100698EDE /* break. */ = {
 			isa = PBXGroup;
 			children = (
+				224D6324194DF65100698EDE /* Main.storyboard */,
 				224D6320194DF65100698EDE /* AppDelegate.swift */,
 				224D6322194DF65100698EDE /* BreakViewController.swift */,
 				22175A2C194FEDF300AA9DCA /* SettingsViewController.swift */,
 				22AE23E2197B48AE00A2AD73 /* Settings.swift */,
-				224D6324194DF65100698EDE /* Main.storyboard */,
+				2292C4F719B1560C00CB8C45 /* FrequencyViewController.swift */,
+				2292C4F919B1566E00CB8C45 /* FromToViewController.swift */,
+				2292C4FB19B1567D00CB8C45 /* RepeatViewController.swift */,
+				2292C4FD19B157A900CB8C45 /* p.swift */,
 				224D6327194DF65100698EDE /* Images.xcassets */,
 				224D631E194DF65100698EDE /* Supporting Files */,
 			);
@@ -261,8 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2292C4FC19B1567D00CB8C45 /* RepeatViewController.swift in Sources */,
 				224D6323194DF65100698EDE /* BreakViewController.swift in Sources */,
+				2292C4FE19B157A900CB8C45 /* p.swift in Sources */,
+				2292C4F819B1560C00CB8C45 /* FrequencyViewController.swift in Sources */,
 				224D6321194DF65100698EDE /* AppDelegate.swift in Sources */,
+				2292C4FA19B1566E00CB8C45 /* FromToViewController.swift in Sources */,
 				22AE23E3197B48AE00A2AD73 /* Settings.swift in Sources */,
 				22175A2D194FEDF300AA9DCA /* SettingsViewController.swift in Sources */,
 			);
@@ -434,6 +450,7 @@
 				222EA5551983CD1600F9CE31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		224D6316194DF65100698EDE /* Build configuration list for PBXProject "break." */ = {
 			isa = XCConfigurationList;
