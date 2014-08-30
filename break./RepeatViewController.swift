@@ -18,14 +18,16 @@ class RepeatViewController: UITableViewController {
 
     func selectCellAtIndexPath(indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if cell === previousCell { return }
+
+        let repeat = (cell.contentView.subviews[0] as UILabel).text
+        Settings.repeat = repeat
+
         cell.accessoryType = .Checkmark
 
-        if cell !== previousCell {
-            previousCell?.accessoryType = .None
-            previousCell = cell
-        }
+        previousCell?.accessoryType = .None
+        previousCell = cell
     }
 
 }
