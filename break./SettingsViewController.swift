@@ -42,7 +42,6 @@ class SettingsViewController: UITableViewController {
         } else {
             return section + 1 // convenient coincidence
         }
-
     }
 
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
