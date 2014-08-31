@@ -132,61 +132,6 @@ when you configure them in settings.</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="9m5-cy-wHc">
-                                <cells>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="untilCell" id="kO9-ix-t2Q">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kO9-ix-t2Q" id="G1B-WJ-A9D">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Until" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFG-ID-Lxk">
-                                                    <rect key="frame" x="20" y="11" width="35" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat Jun 21 at 9:50 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfl-fU-DjO">
-                                                    <rect key="frame" x="409" y="11" width="171" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="XFG-ID-Lxk" firstAttribute="leading" secondItem="G1B-WJ-A9D" secondAttribute="leading" constant="20" id="1Iw-V2-6ve"/>
-                                                <constraint firstItem="XFG-ID-Lxk" firstAttribute="top" secondItem="G1B-WJ-A9D" secondAttribute="top" constant="11" id="5Y1-VX-WYC"/>
-                                                <constraint firstItem="Yfl-fU-DjO" firstAttribute="top" secondItem="G1B-WJ-A9D" secondAttribute="top" constant="11" id="Oz1-1h-6QD"/>
-                                                <constraint firstAttribute="trailing" secondItem="Yfl-fU-DjO" secondAttribute="trailing" constant="20" id="QrY-Cs-Ago"/>
-                                                <constraint firstAttribute="centerY" secondItem="XFG-ID-Lxk" secondAttribute="centerY" id="r9b-hq-oL6"/>
-                                                <constraint firstAttribute="centerY" secondItem="Yfl-fU-DjO" secondAttribute="centerY" id="x6c-3e-Nkj"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datePickerCell" rowHeight="216" id="njG-Jp-qRM">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="njG-Jp-qRM" id="66y-AL-Qvw">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-Bt-ZeI">
-                                                    <rect key="frame" x="140" y="0.0" width="320" height="216"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="216" id="BVr-BB-erY"/>
-                                                        <constraint firstAttribute="width" constant="320" id="QKm-X9-RTl"/>
-                                                    </constraints>
-                                                    <date key="date" timeIntervalSinceReferenceDate="425746881.96216702">
-                                                        <!--2014-06-29 15:01:21 +0000-->
-                                                    </date>
-                                                </datePicker>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="eHF-Bt-ZeI" secondAttribute="centerX" id="CXM-QQ-3MJ"/>
-                                                <constraint firstAttribute="centerY" secondItem="eHF-Bt-ZeI" secondAttribute="centerY" id="z9R-SA-mTV"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Alerts" id="eeP-cA-EJo">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="frequencyCell" id="0rb-M7-3ef">
@@ -301,13 +246,9 @@ To</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="eHF-Bt-ZeI" id="Y3O-up-7nF"/>
                         <outlet property="frequencyLabel" destination="m69-UV-Rkr" id="gks-wG-0Af"/>
                         <outlet property="repeatLabel" destination="NEs-wm-tc9" id="nmh-JT-UWw"/>
                         <outlet property="silenceSwitch" destination="dJM-AQ-6bK" id="fSR-So-TTl"/>
-                        <outlet property="untilCell" destination="kO9-ix-t2Q" id="mpU-ZQ-TfU"/>
-                        <outlet property="untilDateLabel" destination="Yfl-fU-DjO" id="uar-UR-Ahx"/>
-                        <outlet property="untilLabel" destination="XFG-ID-Lxk" id="MgX-d5-ne9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtR-kf-zHW" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,7 +18,6 @@ enum Frequency: Int {
 
 struct Settings {
     static var silence:   Bool           = false                {didSet{synchronize()}}
-    static var until:     NSDate         = NSDate()             {didSet{synchronize()}}
     static var frequency: Frequency      = .Every60Minutes      {didSet{synchronize()}}
     static var from:      NSDate         = NSDate()             {didSet{synchronize()}}
     static var to:        NSDate         = NSDate()             {didSet{synchronize()}}
