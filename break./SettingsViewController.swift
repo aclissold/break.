@@ -31,9 +31,14 @@ class SettingsViewController: UITableViewController {
     let repeats: [UInt: String] =
         [NSCalendarUnit.DayCalendarUnit.toRaw(): "Daily",
          NSCalendarUnit.WeekdayCalendarUnit.toRaw(): "Weekdays"]
+
     override func viewDidLayoutSubviews() {
-        let frequency = NSUserDefaults.standardUserDefaults().integerForKey("frequency")
-        let repeat = NSUserDefaults.standardUserDefaults().integerForKey("repeat")
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let frequency = defaults.integerForKey("frequency")
+        let repeat = defaults.integerForKey("repeat")
+        let silence = defaults.boolForKey("silence")
+        silenceSwitch.on = silence
+        toggleUntilCell(silence)
         frequencyLabel.text = "Every \(frequencies[frequency]!) minutes"
         repeatLabel.text = repeats[UInt(repeat)]
     }

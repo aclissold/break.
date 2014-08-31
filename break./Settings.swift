@@ -31,6 +31,7 @@ private func synchronize() {
         UIApplication.sharedApplication().cancelAllLocalNotifications()
 
         let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(Settings.silence, forKey: "silence")
         defaults.setInteger(Settings.frequency.toRaw(), forKey: "frequency")
         defaults.setInteger(Int(Settings.repeat.toRaw()), forKey: "repeat")
         defaults.synchronize()
@@ -39,7 +40,9 @@ private func synchronize() {
             fatalError("loss of precision")
         }
 
-        scheduleNotifications(frequency: Settings.frequency.toRaw())
+        if !Settings.silence {
+            scheduleNotifications(frequency: Settings.frequency.toRaw())
+        }
     }
 }
 
