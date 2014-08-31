@@ -12,6 +12,23 @@ class RepeatViewController: UITableViewController {
 
     var previousCell: UITableViewCell?
 
+    override func viewDidLayoutSubviews() {
+        let raw = UInt(NSUserDefaults.standardUserDefaults().integerForKey("repeat"))
+        let repeat = NSCalendarUnit.fromRaw(raw)!
+        var indexPath: NSIndexPath!
+        if repeat == .CalendarUnitDay {
+            indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        } else if repeat == .CalendarUnitWeekday {
+            indexPath = NSIndexPath(forRow: 1, inSection: 0)
+        } else {
+            fatalError("unknown repeat value")
+        }
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell.accessoryType = .Checkmark
+        previousCell = cell
+    }
+
+
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         selectCellAtIndexPath(indexPath)
     }
@@ -22,11 +39,12 @@ class RepeatViewController: UITableViewController {
         if cell === previousCell { return }
 
         let repeat = (cell.contentView.subviews[0] as UILabel).text
+
         switch repeat {
-        case "Weekdays":
-            Settings.repeat = .CalendarUnitWeekday
         case "Daily":
             Settings.repeat = .CalendarUnitDay
+        case "Weekdays":
+            Settings.repeat = .CalendarUnitWeekday
         default:
             Settings.repeat = .CalendarUnitWeekday
         }

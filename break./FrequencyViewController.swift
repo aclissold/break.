@@ -13,6 +13,18 @@ class FrequencyViewController: UITableViewController {
     var previousCell: UITableViewCell?
     let frequencies = [20, 30, 60, 90]
 
+    override func viewDidLayoutSubviews() {
+        let frequency = NSUserDefaults.standardUserDefaults().integerForKey("frequency")
+        for (index, element) in enumerate(frequencies) {
+            if element == frequency {
+                let indexPath = NSIndexPath(forRow: index, inSection: 0)
+                let cell = tableView.cellForRowAtIndexPath(indexPath)
+                cell.accessoryType = .Checkmark
+                previousCell = cell
+            }
+        }
+    }
+
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         selectCellAtIndexPath(indexPath)
     }

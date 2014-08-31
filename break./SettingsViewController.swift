@@ -15,6 +15,8 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var untilCell: UITableViewCell!
     @IBOutlet weak var untilLabel: UILabel!
     @IBOutlet weak var untilDateLabel: UILabel!
+    @IBOutlet weak var frequencyLabel: UILabel!
+    @IBOutlet weak var repeatLabel: UILabel!
 
     let untilCellID = "untilCell"
     let datePickerIndexPath = NSIndexPath(forRow: 1, inSection: 1)
@@ -23,6 +25,17 @@ class SettingsViewController: UITableViewController {
 
     @IBAction func back() {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    let frequencies = [20: "20", 30: "30", 60: "60", 90: "90"]
+    let repeats: [UInt: String] =
+        [NSCalendarUnit.DayCalendarUnit.toRaw(): "Daily",
+         NSCalendarUnit.WeekdayCalendarUnit.toRaw(): "Weekdays"]
+    override func viewDidLayoutSubviews() {
+        let frequency = NSUserDefaults.standardUserDefaults().integerForKey("frequency")
+        let repeat = NSUserDefaults.standardUserDefaults().integerForKey("repeat")
+        frequencyLabel.text = "Every \(frequencies[frequency]!) minutes"
+        repeatLabel.text = repeats[UInt(repeat)]
     }
 
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {

@@ -194,16 +194,16 @@ when you configure them in settings.</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0rb-M7-3ef" id="SkM-yo-Ze5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every 60 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m69-UV-Rkr">
-                                                    <rect key="frame" x="427" y="11" width="132" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLz-qm-fzc">
                                                     <rect key="frame" x="20" y="11" width="81" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every 60 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m69-UV-Rkr">
+                                                    <rect key="frame" x="427" y="11" width="132" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -302,6 +302,8 @@ To</string>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="eHF-Bt-ZeI" id="Y3O-up-7nF"/>
+                        <outlet property="frequencyLabel" destination="m69-UV-Rkr" id="gks-wG-0Af"/>
+                        <outlet property="repeatLabel" destination="NEs-wm-tc9" id="nmh-JT-UWw"/>
                         <outlet property="silenceSwitch" destination="dJM-AQ-6bK" id="fSR-So-TTl"/>
                         <outlet property="untilCell" destination="kO9-ix-t2Q" id="mpU-ZQ-TfU"/>
                         <outlet property="untilDateLabel" destination="Yfl-fU-DjO" id="uar-UR-Ahx"/>

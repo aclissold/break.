@@ -26,10 +26,19 @@ struct Settings {
 }
 
 private let queue = dispatch_queue_create(nil, nil)
-
 private func synchronize() {
-    UIApplication.sharedApplication().cancelAllLocalNotifications()
     dispatch_async(queue) {
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(Settings.frequency.toRaw(), forKey: "frequency")
+        defaults.setInteger(Int(Settings.repeat.toRaw()), forKey: "repeat")
+        defaults.synchronize()
+
+        if UInt(defaults.integerForKey("repeat")) != Settings.repeat.toRaw() {
+            fatalError("loss of precision")
+        }
+
         scheduleNotifications(frequency: Settings.frequency.toRaw())
     }
 }
