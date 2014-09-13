@@ -27,14 +27,15 @@ class SettingsViewController: UITableViewController {
     override func viewDidLayoutSubviews() {
         let defaults = NSUserDefaults.standardUserDefaults()
         let frequency = defaults.integerForKey("frequency")
+        p(frequency)
         let repeat = defaults.integerForKey("repeat")
         let silence = defaults.boolForKey("silence")
         silenceSwitch.on = silence
-        frequencyLabel.text = "Every \(frequencies[frequency]!) minutes"
+        frequencyLabel.text = "Every \(frequency) minutes"
         repeatLabel.text = repeats[UInt(repeat)]
     }
 
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 

@@ -18,7 +18,7 @@ class FromToViewController: UITableViewController {
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .None)
     }
 
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if !datePickerIsVisible {
             tableView.beginUpdates()
             tableView.insertRowsAtIndexPaths([datePickerIndexPath], withRowAnimation: .Fade)
@@ -27,7 +27,7 @@ class FromToViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 2
         } else if datePickerIsVisible {

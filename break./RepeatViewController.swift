@@ -23,22 +23,22 @@ class RepeatViewController: UITableViewController {
         } else {
             fatalError("unknown repeat value")
         }
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)!
         cell.accessoryType = .Checkmark
         previousCell = cell
     }
 
 
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectCellAtIndexPath(indexPath)
     }
 
     func selectCellAtIndexPath(indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)!
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if cell === previousCell { return }
 
-        let repeat = (cell.contentView.subviews[0] as UILabel).text
+        let repeat = (cell.contentView.subviews[0] as UILabel).text!
 
         switch repeat {
         case "Daily":
