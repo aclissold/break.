@@ -28,7 +28,7 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-Ht-Nmb">
                                 <rect key="frame" x="337" y="284" width="51" height="31"/>
-                                <color key="onTintColor" red="0.68751317262649536" green="0.0" blue="0.187513068318367" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="onTintColor" red="0.86274509799999999" green="0.1843137255" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuB-QF-gXm">
                                 <rect key="frame" x="559" y="558" width="22" height="22"/>
@@ -68,7 +68,7 @@ when you configure them in settings.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.41898763179779053" green="0.071401350200176239" blue="0.21803674101829529" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.40784313725490196" green="0.082352941176470587" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xuB-QF-gXm" secondAttribute="bottom" constant="20" id="2BA-Lu-7ce"/>
                             <constraint firstItem="i7b-og-OFy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2o0-rK-Mt7"/>
@@ -109,7 +109,7 @@ when you configure them in settings.</string>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dJM-AQ-6bK">
                                                     <rect key="frame" x="531" y="6" width="51" height="31"/>
-                                                    <color key="onTintColor" red="0.6875131726" green="0.0" blue="0.1875130683" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="onTintColor" red="0.86274509799999999" green="0.1843137255" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="silenceSwitchToggled:" destination="Xac-jl-kvh" eventType="valueChanged" id="cZB-f4-cTb"/>
                                                     </connections>
@@ -577,5 +577,5 @@ To</string>
     <resources>
         <image name="Gear" width="22" height="22"/>
     </resources>
-    <color key="tintColor" red="0.54894506931304932" green="0.0" blue="0.18345649540424347" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.86274509803921573" green="0.18431372549019609" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
 </document>
