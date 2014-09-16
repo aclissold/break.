@@ -8,6 +8,8 @@
 
 import UIKit
 
+weak var settingsTableView: UITableView! // for BannerContainerViewController
+
 class SettingsViewController: UITableViewController {
 
     @IBOutlet weak var silenceSwitch: UISwitch!
@@ -15,21 +17,21 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var repeatLabel: UILabel!
 
-    @IBAction func back() {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-
     let frequencies = [20: "20", 30: "30", 60: "60", 90: "90"]
-    let repeats: [UInt: String] =
-        [NSCalendarUnit.DayCalendarUnit.toRaw(): "Daily",
-         NSCalendarUnit.WeekdayCalendarUnit.toRaw(): "Weekdays"]
+    let repeats: [UInt: String] = [
+        NSCalendarUnit.DayCalendarUnit.toRaw(): "Daily",
+        NSCalendarUnit.WeekdayCalendarUnit.toRaw(): "Weekdays"]
+
+    override func viewDidLoad() {
+        settingsTableView = tableView
+    }
 
     override func viewDidLayoutSubviews() {
         let defaults = NSUserDefaults.standardUserDefaults()
         let frequency = defaults.integerForKey("frequency")
-        p(frequency)
         let repeat = defaults.integerForKey("repeat")
         let silence = defaults.boolForKey("silence")
+
         silenceSwitch.on = silence
         frequencyLabel.text = "Every \(frequency) minutes"
         repeatLabel.text = repeats[UInt(repeat)]
@@ -41,6 +43,10 @@ class SettingsViewController: UITableViewController {
 
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
         Settings.silence = sender.on
+    }
+
+    @IBAction func back() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

@@ -17,6 +17,8 @@
 		2292C4FC19B1567D00CB8C45 /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292C4FB19B1567D00CB8C45 /* RepeatViewController.swift */; };
 		2292C4FE19B157A900CB8C45 /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292C4FD19B157A900CB8C45 /* p.swift */; };
 		22AE23E3197B48AE00A2AD73 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE23E2197B48AE00A2AD73 /* Settings.swift */; };
+		22B3040519C7F58C00C18C7A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B3040419C7F58C00C18C7A /* iAd.framework */; };
+		22FC272A19C7FCB9004268E4 /* BannerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +48,8 @@
 		2292C4FB19B1567D00CB8C45 /* RepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatViewController.swift; sourceTree = "<group>"; };
 		2292C4FD19B157A900CB8C45 /* p.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
 		22AE23E2197B48AE00A2AD73 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		22B3040419C7F58C00C18C7A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B3040519C7F58C00C18C7A /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,7 @@
 		2218177819B296F600368A26 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */,
 				224D6322194DF65100698EDE /* BreakViewController.swift */,
 				22175A2C194FEDF300AA9DCA /* SettingsViewController.swift */,
 				2292C4F719B1560C00CB8C45 /* FrequencyViewController.swift */,
@@ -74,6 +80,7 @@
 		222EA5451983CD1600F9CE31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22B3040419C7F58C00C18C7A /* iAd.framework */,
 				222EA5461983CD1600F9CE31 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -193,6 +200,7 @@
 				2292C4FE19B157A900CB8C45 /* p.swift in Sources */,
 				2292C4F819B1560C00CB8C45 /* FrequencyViewController.swift in Sources */,
 				224D6321194DF65100698EDE /* AppDelegate.swift in Sources */,
+				22FC272A19C7FCB9004268E4 /* BannerContainerViewController.swift in Sources */,
 				2292C4FA19B1566E00CB8C45 /* FromToViewController.swift in Sources */,
 				22AE23E3197B48AE00A2AD73 /* Settings.swift in Sources */,
 				22175A2D194FEDF300AA9DCA /* SettingsViewController.swift in Sources */,

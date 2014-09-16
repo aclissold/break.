@@ -31,10 +31,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func application(application: UIApplication, handleActionWithIdentifier identifier: String?,
-        forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-            p("Received \(identifier)")
-            completionHandler()
-    }
-
 }
