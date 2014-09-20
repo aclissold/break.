@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-                            
+
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
@@ -29,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(notificationSettings)
 
         return true
+    }
+
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?,
+    forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        p("Received \(identifier)")
+        completionHandler()
     }
 
 }
