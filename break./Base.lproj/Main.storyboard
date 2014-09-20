@@ -1,96 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y8H-ip-pQL">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Break View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="BreakViewController" customModule="break_" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do Not Disturb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTv-It-E6w">
-                                <rect key="frame" x="214" y="289" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="114" y="290" width="115" height="21"/>
-                                </variation>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-Ht-Nmb">
-                                <rect key="frame" x="337" y="284" width="51" height="31"/>
-                                <color key="onTintColor" red="0.86274509799999999" green="0.1843137255" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuB-QF-gXm">
-                                <rect key="frame" x="559" y="558" width="22" height="22"/>
-                                <state key="normal" image="Gear">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="y8H-ip-pQL" kind="popoverPresentation" popoverAnchorView="xuB-QF-gXm" id="xh4-AJ-XLT">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7b-og-OFy">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="276"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="break." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJR-wx-BwU">
-                                        <rect key="frame" x="225" y="110" width="150" height="56"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="48"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="cJR-wx-BwU" secondAttribute="centerY" id="BKA-eI-GXr">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="-1"/>
-                                    </constraint>
-                                    <constraint firstAttribute="centerX" secondItem="cJR-wx-BwU" secondAttribute="centerX" id="eXn-8o-bp4"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="282" translatesAutoresizingMaskIntoConstraints="NO" id="raE-J4-DxR">
-                                <rect key="frame" x="159" y="509" width="282" height="41"/>
-                                <string key="text">You will receive typing break alerts
-when you configure them in settings.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.40784313725490196" green="0.082352941176470587" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xuB-QF-gXm" secondAttribute="bottom" constant="20" id="2BA-Lu-7ce"/>
-                            <constraint firstItem="i7b-og-OFy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2o0-rK-Mt7"/>
-                            <constraint firstAttribute="trailing" secondItem="i7b-og-OFy" secondAttribute="trailing" id="8kH-3z-b2X"/>
-                            <constraint firstAttribute="centerX" secondItem="tdm-Ht-Nmb" secondAttribute="centerX" constant="-61.5" id="D1Y-gf-eb3"/>
-                            <constraint firstItem="tdm-Ht-Nmb" firstAttribute="leading" secondItem="uTv-It-E6w" secondAttribute="trailing" constant="8" id="J4g-B2-ZtW"/>
-                            <constraint firstItem="tdm-Ht-Nmb" firstAttribute="top" secondItem="i7b-og-OFy" secondAttribute="bottom" constant="8" id="LtW-Yw-hhP"/>
-                            <constraint firstItem="i7b-og-OFy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QXW-wg-0Ee"/>
-                            <constraint firstAttribute="centerY" secondItem="uTv-It-E6w" secondAttribute="centerY" constant="0.5" id="Xrt-qt-2Yh"/>
-                            <constraint firstItem="xuB-QF-gXm" firstAttribute="top" secondItem="raE-J4-DxR" secondAttribute="bottom" constant="8" id="ZJL-Oq-bRd"/>
-                            <constraint firstAttribute="centerX" secondItem="raE-J4-DxR" secondAttribute="centerX" id="mtv-Gh-2aV"/>
-                            <constraint firstAttribute="centerY" secondItem="tdm-Ht-Nmb" secondAttribute="centerY" constant="0.5" id="v0m-yy-OI6"/>
-                            <constraint firstAttribute="trailing" secondItem="xuB-QF-gXm" secondAttribute="trailing" constant="19" id="wcp-bl-ngw">
-                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
-                            </constraint>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-475" y="441"/>
-        </scene>
         <!--Banner Container View Controller-->
         <scene sceneID="cIr-ck-OYa">
             <objects>
@@ -123,10 +37,10 @@ when you configure them in settings.</string>
             </objects>
             <point key="canvasLocation" x="389" y="441"/>
         </scene>
-        <!--Settings-->
+        <!--break.-->
         <scene sceneID="pxL-K1-lKb">
             <objects>
-                <tableViewController id="Xac-jl-kvh" customClass="SettingsViewController" customModule="break_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Xac-jl-kvh" customClass="BreakViewController" customModule="break_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eqR-ea-mcR">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,13 +185,7 @@ To</string>
                             <outlet property="delegate" destination="Xac-jl-kvh" id="2R1-sV-i1B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="TK5-K2-nML">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="2HL-VQ-INZ">
-                            <connections>
-                                <action selector="back" destination="Xac-jl-kvh" id="7Ag-Ui-Apu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="break." id="TK5-K2-nML"/>
                     <connections>
                         <outlet property="frequencyLabel" destination="m69-UV-Rkr" id="gks-wG-0Af"/>
                         <outlet property="repeatLabel" destination="NEs-wm-tc9" id="nmh-JT-UWw"/>
@@ -560,8 +468,5 @@ To</string>
             <point key="canvasLocation" x="2789" y="1250"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Gear" width="22" height="22"/>
-    </resources>
     <color key="tintColor" red="0.86274509803921573" green="0.18431372549019609" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
 </document>

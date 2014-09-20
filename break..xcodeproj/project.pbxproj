@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22175A2D194FEDF300AA9DCA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22175A2C194FEDF300AA9DCA /* SettingsViewController.swift */; };
+		22175A2D194FEDF300AA9DCA /* BreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22175A2C194FEDF300AA9DCA /* BreakViewController.swift */; };
 		224D6321194DF65100698EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224D6320194DF65100698EDE /* AppDelegate.swift */; };
-		224D6323194DF65100698EDE /* BreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224D6322194DF65100698EDE /* BreakViewController.swift */; };
 		224D6326194DF65100698EDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224D6324194DF65100698EDE /* Main.storyboard */; };
 		224D6328194DF65100698EDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224D6327194DF65100698EDE /* Images.xcassets */; };
 		2292C4F819B1560C00CB8C45 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292C4F719B1560C00CB8C45 /* FrequencyViewController.swift */; };
@@ -35,12 +34,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		22175A2C194FEDF300AA9DCA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		22175A2C194FEDF300AA9DCA /* BreakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakViewController.swift; sourceTree = "<group>"; };
 		222EA5461983CD1600F9CE31 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		224D631B194DF65100698EDE /* break..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = break..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224D631F194DF65100698EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		224D6320194DF65100698EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		224D6322194DF65100698EDE /* BreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakViewController.swift; sourceTree = "<group>"; };
 		224D6325194DF65100698EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		224D6327194DF65100698EDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2292C4F719B1560C00CB8C45 /* FrequencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */,
-				224D6322194DF65100698EDE /* BreakViewController.swift */,
-				22175A2C194FEDF300AA9DCA /* SettingsViewController.swift */,
+				22175A2C194FEDF300AA9DCA /* BreakViewController.swift */,
 				2292C4F719B1560C00CB8C45 /* FrequencyViewController.swift */,
 				2292C4F919B1566E00CB8C45 /* FromToViewController.swift */,
 				2292C4FB19B1567D00CB8C45 /* RepeatViewController.swift */,
@@ -196,14 +193,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2292C4FC19B1567D00CB8C45 /* RepeatViewController.swift in Sources */,
-				224D6323194DF65100698EDE /* BreakViewController.swift in Sources */,
 				2292C4FE19B157A900CB8C45 /* p.swift in Sources */,
 				2292C4F819B1560C00CB8C45 /* FrequencyViewController.swift in Sources */,
 				224D6321194DF65100698EDE /* AppDelegate.swift in Sources */,
 				22FC272A19C7FCB9004268E4 /* BannerContainerViewController.swift in Sources */,
 				2292C4FA19B1566E00CB8C45 /* FromToViewController.swift in Sources */,
 				22AE23E3197B48AE00A2AD73 /* Settings.swift in Sources */,
-				22175A2D194FEDF300AA9DCA /* SettingsViewController.swift in Sources */,
+				22175A2D194FEDF300AA9DCA /* BreakViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
