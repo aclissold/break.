@@ -36,7 +36,10 @@ class BannerContainerViewController: UIViewController, ADBannerViewDelegate {
         }
     }
 
+    private var firstApperance = true
     override func viewDidAppear(animated: Bool) {
+        if firstApperance { firstApperance = false; return }
+
         updateInsets()
     }
 
@@ -71,13 +74,17 @@ class BannerContainerViewController: UIViewController, ADBannerViewDelegate {
     // MARK: ADBannerViewDelegate
 
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerIsVisible = true
-        updateInsets()
+        if !bannerIsVisible {
+            bannerIsVisible = true
+            updateInsets()
+        }
     }
 
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerIsVisible = false
-        updateInsets()
+        if bannerIsVisible {
+            bannerIsVisible = false
+            updateInsets()
+        }
     }
 
 }
