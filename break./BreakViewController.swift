@@ -45,6 +45,8 @@ class BreakViewController: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
+        navigationController!.navigationBar.layer.removeAllAnimations()
+
         UIView.animateWithDuration(0.4) {
             self.navigationController!.navigationBarHidden = false
             UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
