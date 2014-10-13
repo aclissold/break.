@@ -24,6 +24,8 @@ class BreakViewController: UITableViewController {
 
     let logo = UIImage(named: "Logo")
 
+    // MARK: View Controller Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView = tableView
@@ -35,6 +37,7 @@ class BreakViewController: UITableViewController {
         super.viewWillAppear(animated)
         UIView.animateWithDuration(0.4) {
             self.navigationController!.navigationBarHidden = true
+            UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
         }
     }
 
@@ -42,6 +45,7 @@ class BreakViewController: UITableViewController {
         super.viewWillDisappear(animated)
         UIView.animateWithDuration(0.4) {
             self.navigationController!.navigationBarHidden = false
+            UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
         }
     }
 
@@ -56,9 +60,13 @@ class BreakViewController: UITableViewController {
         repeatLabel.text = repeats[UInt(repeat)]
     }
 
+    // MARK: UITableViewDelegate
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+
+    // MARK: Actions
 
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
         Settings.silence = sender.on

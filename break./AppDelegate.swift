@@ -28,11 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appearance = UINavigationBar.appearance()
         appearance.barTintColor = UIColor(white: 1, alpha: 0.2)
         appearance.translucent = true
-        appearance.barStyle = .Default
         appearance.alpha = 0.2
         appearance.setBackgroundImage(image, forBarMetrics: .Default)
         appearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.clearColor()]
-        appearance.barStyle = .Black
 
         // Configure notifications.
         let snoozeAction = UIMutableUserNotificationAction()
