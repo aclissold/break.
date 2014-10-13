@@ -53,16 +53,9 @@ private func scheduleNotifications(#frequency: Int) {
         components.second = 0
         components.minute = minutes % 60
         components.hour   = minutes / 60
-        let fireDate = calendar.dateFromComponents(components)
 
-        let notification = UILocalNotification()
-        notification.fireDate = fireDate
-        notification.timeZone = NSTimeZone.defaultTimeZone()
-        notification.category = "Snooze"
-        notification.repeatInterval = Settings.repeat
-        notification.alertBody = "It's time for your typing break!"
-        notification.soundName = UILocalNotificationDefaultSoundName
-
+        let fireDate = calendar.dateFromComponents(components)!
+        let notification = TypingBreakNotification(date: fireDate)
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
 
         minutes += frequency
