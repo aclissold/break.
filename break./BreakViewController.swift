@@ -28,6 +28,21 @@ class BreakViewController: UITableViewController {
         super.viewDidLoad()
         settingsTableView = tableView
         tableView.addParallaxWithImage(logo, andHeight: logo.size.height)
+        navigationController!.navigationBarHidden = true
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animateWithDuration(0.4) {
+            self.navigationController!.navigationBarHidden = true
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIView.animateWithDuration(0.4) {
+            self.navigationController!.navigationBarHidden = false
+        }
     }
 
     override func viewDidLayoutSubviews() {
