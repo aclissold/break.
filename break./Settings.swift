@@ -49,7 +49,8 @@ struct Settings {
 // Since these recur indefinitely, it's fine if they're scheduled in the past.
 private func scheduleNotifications(#frequency: Int) {
     let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-    var components = calendar.componentsInTimeZone(NSTimeZone.defaultTimeZone(), fromDate: NSDate())
+    let flags = NSCalendarUnit(UInt.max)
+    var components = calendar.components(flags, fromDate: NSDate())
 
     var minutes = 0
     while minutes < 24*60 {

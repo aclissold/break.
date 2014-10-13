@@ -28,25 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Theme.
         let appearance = UINavigationBar.appearance()
         appearance.barTintColor = UIColor(white: 1, alpha: 0.2)
-        appearance.translucent = true
         appearance.alpha = 0.2
         appearance.setBackgroundImage(image, forBarMetrics: .Default)
         appearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.clearColor()]
 
         // Configure notifications.
-        let snoozeAction = UIMutableUserNotificationAction()
-        snoozeAction.identifier = snooze
-        snoozeAction.title = snooze
-        snoozeAction.activationMode = .Background
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            // Enable the Snooze action on iOS 8+.
+            let snoozeAction = UIMutableUserNotificationAction()
+            snoozeAction.identifier = snooze
+            snoozeAction.title = snooze
+            snoozeAction.activationMode = .Background
 
-        let category = UIMutableUserNotificationCategory()
-        category.identifier = snooze
-        category.setActions([snoozeAction], forContext: .Default)
-        category.setActions([snoozeAction], forContext: .Minimal)
+            let category = UIMutableUserNotificationCategory()
+            category.identifier = snooze
+            category.setActions([snoozeAction], forContext: .Default)
+            category.setActions([snoozeAction], forContext: .Minimal)
 
-        let categories = NSSet(object: category)
-        let notificationSettings = UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: categories)
-        application.registerUserNotificationSettings(notificationSettings)
+            let categories = NSSet(object: category)
+            let notificationSettings = UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: categories)
+            application.registerUserNotificationSettings(notificationSettings)
+        }
 
         // Force Settings to synchronize the first time the app is ever launched.
         if NSUserDefaults.standardUserDefaults().objectForKey("silence") == nil { // arbitrary key
