@@ -35,6 +35,7 @@ class BreakViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
         UIView.animateWithDuration(0.4) {
             self.navigationController!.navigationBarHidden = true
             UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
@@ -43,6 +44,7 @@ class BreakViewController: UITableViewController {
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+
         UIView.animateWithDuration(0.4) {
             self.navigationController!.navigationBarHidden = false
             UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)

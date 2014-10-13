@@ -43,10 +43,6 @@ class BannerContainerViewController: UIViewController, ADBannerViewDelegate {
         updateInsets()
     }
 
-    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        updateInsets()
-    }
-
     func updateInsets() {
         var insets: UIEdgeInsets!
         var contentSize: CGSize!
