@@ -20,27 +20,30 @@ struct Settings {
     static var silence:   Bool           = false                {didSet{synchronize()}}
     static var frequency: Frequency      = .Every60Minutes      {didSet{synchronize()}}
     static var repeat:    NSCalendarUnit = .CalendarUnitWeekday {didSet{synchronize()}}
-}
 
-private let queue = dispatch_queue_create(nil, nil)
-private func synchronize() {
-    dispatch_async(queue) {
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+    private static let queue = dispatch_queue_create(nil, nil)
 
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(Settings.silence, forKey: "silence")
-        defaults.setInteger(Settings.frequency.toRaw(), forKey: "frequency")
-        defaults.setInteger(Int(Settings.repeat.toRaw()), forKey: "repeat")
-        defaults.synchronize()
+    // Should only ever be called outside this file on first launch.
+    static func synchronize() {
+        dispatch_async(queue) {
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
 
-        if UInt(defaults.integerForKey("repeat")) != Settings.repeat.toRaw() {
-            fatalError("loss of precision")
-        }
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(Settings.silence, forKey: "silence")
+            defaults.setInteger(Settings.frequency.toRaw(), forKey: "frequency")
+            defaults.setInteger(Int(Settings.repeat.toRaw()), forKey: "repeat")
+            defaults.synchronize()
 
-        if !Settings.silence {
-            scheduleNotifications(frequency: Settings.frequency.toRaw())
+            if UInt(defaults.integerForKey("repeat")) != Settings.repeat.toRaw() {
+                fatalError("loss of precision")
+            }
+
+            if !Settings.silence {
+                scheduleNotifications(frequency: Settings.frequency.toRaw())
+            }
         }
     }
+
 }
 
 // Since these recur indefinitely, it's fine if they're scheduled in the past.
