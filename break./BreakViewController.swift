@@ -66,10 +66,22 @@ class BreakViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
+    // MARK: UITableViewDataSource
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return Settings.silence ? 1 : 2
+    }
+
     // MARK: Actions
 
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
-        Settings.silence = sender.on
+        let silence = sender.on
+        Settings.silence = silence
+        if silence {
+            tableView.deleteSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
+        } else {
+            tableView.insertSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
+        }
     }
 
     @IBAction func back() {

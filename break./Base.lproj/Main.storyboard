@@ -79,7 +79,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Alerts" id="eeP-cA-EJo">
+                            <tableViewSection headerTitle="Typing Break Alerts" id="eeP-cA-EJo">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="frequencyCell" id="0rb-M7-3ef">
                                         <autoresizingMask key="autoresizingMask"/>
