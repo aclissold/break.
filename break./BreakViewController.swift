@@ -22,8 +22,12 @@ class BreakViewController: UITableViewController {
         NSCalendarUnit.DayCalendarUnit.toRaw(): "Daily",
         NSCalendarUnit.WeekdayCalendarUnit.toRaw(): "Weekdays"]
 
+    let logo = UIImage(named: "Logo")
+
     override func viewDidLoad() {
+        super.viewDidLoad()
         settingsTableView = tableView
+        tableView.addParallaxWithImage(logo, andHeight: logo.size.height)
     }
 
     override func viewDidLayoutSubviews() {

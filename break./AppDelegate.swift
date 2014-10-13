@@ -16,9 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        // Create a translucent background image for the navigation bar.
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        UIColor(white: 1, alpha: 0.85).setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
         // Theme.
-        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.clearColor()]
+        let appearance = UINavigationBar.appearance()
+        appearance.barTintColor = UIColor(white: 1, alpha: 0.2)
+        appearance.translucent = true
+        appearance.barStyle = .Default
+        appearance.alpha = 0.2
+        appearance.setBackgroundImage(image, forBarMetrics: .Default)
+        appearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.clearColor()]
+        appearance.barStyle = .Black
 
         // Configure notifications.
         let snoozeAction = UIMutableUserNotificationAction()
