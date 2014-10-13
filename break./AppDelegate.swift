@@ -48,6 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationSettings = UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: categories)
         application.registerUserNotificationSettings(notificationSettings)
 
+        // Force Settings to synchronize the first time the app is ever launched.
+        if NSUserDefaults.standardUserDefaults().objectForKey("silence") == nil {
+            Settings.silence = Settings.silence
+        }
+
         return true
     }
 
