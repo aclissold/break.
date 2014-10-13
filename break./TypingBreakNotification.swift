@@ -13,7 +13,7 @@ class TypingBreakNotification: UILocalNotification {
 
         self.fireDate = date
         self.timeZone = NSTimeZone.defaultTimeZone()
-        self.category = "Snooze"
+        self.category = snooze
         self.repeatInterval = Settings.repeat
         self.alertBody = "It's time for your typing break!"
         self.soundName = UILocalNotificationDefaultSoundName

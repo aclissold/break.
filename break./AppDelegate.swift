@@ -9,6 +9,7 @@
 import UIKit
 
 let globalTintColor = UIColor(red: 220.0/255, green: 47.0/255, blue: 43.0/255, alpha: 1)
+let snooze = "Snooze"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,12 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Configure notifications.
         let snoozeAction = UIMutableUserNotificationAction()
-        snoozeAction.identifier = "Snooze"
-        snoozeAction.title = "Snooze"
+        snoozeAction.identifier = snooze
+        snoozeAction.title = snooze
         snoozeAction.activationMode = .Background
 
         let category = UIMutableUserNotificationCategory()
-        category.identifier = "Snooze"
+        category.identifier = snooze
         category.setActions([snoozeAction], forContext: .Default)
         category.setActions([snoozeAction], forContext: .Minimal)
 
@@ -52,8 +53,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?,
     forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-        p("Received \(identifier)")
-        completionHandler()
+        if identifier == snooze {
+            // Schedule a new notification 9 minutes from now.
+            let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+            var components = calendar.componentsInTimeZone(NSTimeZone.defaultTimeZone(), fromDate: NSDate())
+            components.minute += 9
+            let fireDate = calendar.dateFromComponents(components)!
+            let notification = TypingBreakNotification(date: fireDate)
+
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+
+            completionHandler()
+        }
     }
 
 }
