@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearance.barTintColor = UIColor(white: 1, alpha: 0.2)
         appearance.alpha = 0.2
         appearance.setBackgroundImage(image, forBarMetrics: .Default)
-        appearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.clearColor()]
+        appearance.titleTextAttributes = [
+            NSForegroundColorAttributeName: globalTintColor,
+            NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 17)
+        ]
 
         // Configure notifications.
         if application.respondsToSelector("registerUserNotificationSettings:") {

@@ -13,6 +13,11 @@ class FrequencyViewController: UITableViewController {
     var previousCell: UITableViewCell?
     let frequencies = [20, 30, 60, 90]
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Frequency"
+    }
+
     override func viewDidLayoutSubviews() {
         let frequency = NSUserDefaults.standardUserDefaults().integerForKey("frequency")
         for (index, element) in enumerate(frequencies) {

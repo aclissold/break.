@@ -12,6 +12,11 @@ class RepeatViewController: UITableViewController {
 
     var previousCell: UITableViewCell?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Repeat"
+    }
+
     override func viewDidLayoutSubviews() {
         let raw = UInt(NSUserDefaults.standardUserDefaults().integerForKey("repeat"))
         let repeat = NSCalendarUnit.fromRaw(raw)!
