@@ -1,6 +1,6 @@
 break.
 ======
 
-An iOS app for typing break notifications.
+A minimalistic iOS app to remind you when it’s time for your typing “break.”
 
-Currently just a work-in-progress.
+![Screenshot](https://raw.githubusercontent.com/aclissold/break./master/break./Images/Screenshots/Screenshot1-4.0.png)
