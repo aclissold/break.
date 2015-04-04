@@ -17,11 +17,14 @@ class BreakViewController: UITableViewController {
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var repeatLabel: UILabel!
 
+    let wormhole = MMWormhole(applicationGroupIdentifier: suiteName, optionalDirectory: "wormhole")
+
     let frequencies = [20: "20", 30: "30", 60: "60", 90: "90"]
     let repeats: [UInt: String] = [
         NSCalendarUnit.DayCalendarUnit.rawValue: "Daily",
         NSCalendarUnit.WeekdayCalendarUnit.rawValue: "Weekdays"]
 
+    var numberOfSections = Settings.silence ? 1 : 2
     let logo = UIImage(named: "Logo")!
 
     // MARK: View Controller Lifecycle
@@ -39,6 +42,17 @@ class BreakViewController: UITableViewController {
         silenceSwitch.on = Settings.silence
         frequencyLabel.text = "Every \(Settings.frequency.rawValue) minutes"
         repeatLabel.text = repeats[Settings.repeat.rawValue]
+
+//        TODO: figure out why this crashes the app
+//        wormhole.listenForMessageWithIdentifier("watchDidUpdateSilence", listener: { (messageObject) in
+//            let on = messageObject as Bool
+//
+//            Settings.silence = on
+//            self.silenceSwitch.setOn(on, animated: true)
+//            // Intentionally not calling Settings.synchronize() since the WatchKit extension handles this
+//
+//            self.updateTableViewForSilenceState(on)
+//        })
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -71,21 +85,24 @@ class BreakViewController: UITableViewController {
     // MARK: UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Settings.silence.boolValue ? 1 : 2
+        return numberOfSections
     }
 
     // MARK: Actions
 
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
+        wormhole.passMessageObject(sender.on, identifier: "phoneDidUpdateSilence")
         Settings.silence = sender.on
         Settings.synchronize()
-        toggleSilenceSwitch(sender.on)
+        updateTableViewForSilenceState(sender.on)
     }
 
-    func toggleSilenceSwitch(on: Bool) {
+    func updateTableViewForSilenceState(on: Bool) {
         if on {
+            numberOfSections = 1
             tableView.deleteSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
         } else {
+            numberOfSections = 2
             tableView.insertSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
         }
     }

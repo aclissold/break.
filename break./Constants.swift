@@ -8,4 +8,5 @@
 //  Copyright (c) 2015 Andrew Clissold. All rights reserved.
 //
 
-let userDefaults = NSUserDefaults(suiteName: "group.com.andrewclissold.break-")!
+let suiteName = "group.com.andrewclissold.break-"
+let userDefaults = NSUserDefaults(suiteName: suiteName)!

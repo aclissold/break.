@@ -10,4 +10,5 @@
 
 import Foundation
 
-let userDefaults = NSUserDefaults(suiteName: "group.com.andrewclissold.break-")!
+let suiteName = "group.com.andrewclissold.break-"
+let userDefaults = NSUserDefaults(suiteName: suiteName)!

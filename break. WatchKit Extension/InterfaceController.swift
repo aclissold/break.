@@ -14,6 +14,8 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet weak var silenceSwitch: WKInterfaceSwitch!
 
+    let wormhole = MMWormhole(applicationGroupIdentifier: suiteName, optionalDirectory: "wormhole")
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -22,16 +24,16 @@ class InterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-    }
 
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+        wormhole.listenForMessageWithIdentifier("phoneDidUpdateSilence", listener: { (messageObject) in
+            self.silenceSwitch.setOn(messageObject as Bool)
+        })
     }
 
     @IBAction func silenceSwitchToggled(value: Bool) {
+        wormhole.passMessageObject(value, identifier: "watchDidUpdateSilence")
         userDefaults.setBool(value, forKey: "silence")
+        userDefaults.synchronize()
     }
 }
