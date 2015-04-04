@@ -1,7 +1,7 @@
 {
     "aps": {
         "alert": {
-            "body": "It’s break time!",
+            "body": "It’s time for your typing break!",
             "title": "Optional title"
         },
         "category": "myCategory"
