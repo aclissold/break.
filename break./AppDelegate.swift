@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         theme()
         configureNotifications(application)
 
@@ -55,7 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             category.setActions([snoozeAction], forContext: .Default)
             category.setActions([snoozeAction], forContext: .Minimal)
 
-            let categories = NSSet(object: category)
+            var categories = Set<NSObject>()
+            categories.insert(category)
             let notificationSettings = UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: categories)
             application.registerUserNotificationSettings(notificationSettings)
         }
@@ -81,8 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func application(application: UIApplication!, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) {
-        let silence = userInfo["silence"] as Bool
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        let silence = userInfo?["silence"] as! Bool
         Settings.silence = silence
         Settings.synchronize()
     }

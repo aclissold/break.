@@ -23,6 +23,7 @@ class BreakViewController: UITableViewController {
         NSCalendarUnit.CalendarUnitWeekday.rawValue: "Weekdays"]
 
     var numberOfSections = Settings.silence ? 1 : 2
+
     let logo = UIImage(named: "Logo")!
 
     // MARK: View Controller Lifecycle

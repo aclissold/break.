@@ -32,7 +32,7 @@ class BannerContainerViewController: UIViewController, ADBannerViewDelegate {
             format, options: options, metrics: nil, views: ["bannerView": bannerView])
         view.addConstraints(constraints)
         if constraints.count == 1 {
-            constraint = constraints.first! as NSLayoutConstraint
+            constraint = constraints.first! as! NSLayoutConstraint
         }
     }
 

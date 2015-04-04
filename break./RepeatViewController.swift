@@ -43,7 +43,7 @@ class RepeatViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if cell === previousCell { return }
 
-        let repeat = (cell.contentView.subviews[0] as UILabel).text!
+        let repeat = (cell.contentView.subviews[0] as! UILabel).text!
 
         switch repeat {
         case "Daily":
