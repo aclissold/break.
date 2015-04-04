@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-let userDefaults = NSUserDefaults.standardUserDefaults()
-
 enum Frequency: Int {
     case Every20Minutes = 20
     case Every30Minutes = 30

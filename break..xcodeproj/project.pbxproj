@@ -19,6 +19,8 @@
 		22F0C13219EC3F0C00AD10C9 /* TypingBreakNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C13119EC3F0C00AD10C9 /* TypingBreakNotification.swift */; };
 		22FC272A19C7FCB9004268E4 /* BannerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */; };
 		30DE13B395804240849C81CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E87386575D4EAFBE68D3FB /* libPods.a */; };
+		B50CA1FF1AD064050025B497 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50CA1FE1AD064050025B497 /* Constants.swift */; };
+		B528E5751AD051FF00F91D58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528E5741AD051FF00F91D58 /* Constants.swift */; };
 		B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */; };
 		B5EDBD571ACFADE0002BC82D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD561ACFADE0002BC82D /* NotificationController.swift */; };
 		B5EDBD591ACFADE0002BC82D /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD581ACFADE0002BC82D /* GlanceController.swift */; };
@@ -78,6 +80,10 @@
 		22F0C13119EC3F0C00AD10C9 /* TypingBreakNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingBreakNotification.swift; sourceTree = "<group>"; };
 		22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerContainerViewController.swift; sourceTree = "<group>"; };
 		74E87386575D4EAFBE68D3FB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50CA1FC1AD062350025B497 /* break..entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = break..entitlements; sourceTree = "<group>"; };
+		B50CA1FD1AD062600025B497 /* break. WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "break. WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		B50CA1FE1AD064050025B497 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B528E5741AD051FF00F91D58 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5EDBD4F1ACFADE0002BC82D /* break. WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "break. WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EDBD521ACFADE0002BC82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EDBD531ACFADE0002BC82D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -156,7 +162,9 @@
 		224D631D194DF65100698EDE /* break. */ = {
 			isa = PBXGroup;
 			children = (
+				B50CA1FC1AD062350025B497 /* break..entitlements */,
 				224D6324194DF65100698EDE /* Main.storyboard */,
+				B528E5741AD051FF00F91D58 /* Constants.swift */,
 				224D6320194DF65100698EDE /* AppDelegate.swift */,
 				2218177819B296F600368A26 /* Controllers */,
 				22AE23E2197B48AE00A2AD73 /* Settings.swift */,
@@ -181,6 +189,8 @@
 		B5EDBD501ACFADE0002BC82D /* break. WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B50CA1FD1AD062600025B497 /* break. WatchKit Extension.entitlements */,
+				B50CA1FE1AD064050025B497 /* Constants.swift */,
 				B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */,
 				B5EDBD561ACFADE0002BC82D /* NotificationController.swift */,
 				B5EDBD581ACFADE0002BC82D /* GlanceController.swift */,
@@ -286,10 +296,20 @@
 					224D631A194DF65100698EDE = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = DVS6NR923Y;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B5EDBD4E1ACFADE0002BC82D = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = DVS6NR923Y;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B5EDBD5D1ACFADE0002BC82D = {
 						CreatedOnToolsVersion = 6.2;
@@ -392,6 +412,7 @@
 				22AE23E3197B48AE00A2AD73 /* Settings.swift in Sources */,
 				22175A2D194FEDF300AA9DCA /* BreakViewController.swift in Sources */,
 				22F0C13219EC3F0C00AD10C9 /* TypingBreakNotification.swift in Sources */,
+				B528E5751AD051FF00F91D58 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +423,7 @@
 				B5EDBD571ACFADE0002BC82D /* NotificationController.swift in Sources */,
 				B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */,
 				B5EDBD591ACFADE0002BC82D /* GlanceController.swift in Sources */,
+				B50CA1FF1AD064050025B497 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,12 +548,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = break./break..entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = break./Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "break./break.-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -545,12 +570,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = break./break..entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = break./Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "break./break.-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -559,7 +587,9 @@
 		B5EDBD6D1ACFADE0002BC82D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "break. WatchKit Extension/break. WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -569,6 +599,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -576,13 +607,16 @@
 		B5EDBD6E1ACFADE0002BC82D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "break. WatchKit Extension/break. WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = "break. WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -650,6 +684,7 @@
 				B5EDBD701ACFADE0002BC82D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5EDBD721ACFADE0002BC82D /* Build configuration list for PBXNativeTarget "break. WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -658,6 +693,7 @@
 				B5EDBD6E1ACFADE0002BC82D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

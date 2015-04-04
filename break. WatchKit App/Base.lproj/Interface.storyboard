@@ -14,6 +14,9 @@
                             <color key="tintColor" red="0.86274509799999999" green="0.1843137255" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </switch>
                     </items>
+                    <connections>
+                        <outlet property="silenceSwitch" destination="tIi-lN-AuH" id="eUi-bu-WRS"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>

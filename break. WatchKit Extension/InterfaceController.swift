@@ -12,10 +12,13 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var silenceSwitch: WKInterfaceSwitch!
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        // Configure interface objects here.
+        let silence = userDefaults.boolForKey("silence")
+        silenceSwitch.setOn(silence)
     }
 
     override func willActivate() {
