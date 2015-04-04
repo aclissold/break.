@@ -69,7 +69,7 @@ private func scheduleNotifications(#frequency: Int) {
         components.hour   = minutes / 60
 
         let fireDate = calendar.dateFromComponents(components)!
-        let notification = TypingBreakNotification(date: fireDate)
+        let notification = TypingBreakNotification(date: fireDate, repeat: true)
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
 
         minutes += frequency

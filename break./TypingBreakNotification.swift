@@ -8,15 +8,17 @@
 
 class TypingBreakNotification: UILocalNotification {
 
-    init(date: NSDate) {
+    init(date: NSDate, repeat: Bool) {
         super.init()
 
-        self.fireDate = date
-        self.timeZone = NSTimeZone.defaultTimeZone()
-        self.repeatInterval = Settings.repeat
-        self.alertBody = "It's time for your typing break!"
-        self.soundName = UILocalNotificationDefaultSoundName
-        if self.respondsToSelector("setCategory:") { self.category = snooze }
+        fireDate = date
+        timeZone = NSTimeZone.defaultTimeZone()
+        if (repeat) {
+            repeatInterval = Settings.repeat
+        }
+        alertBody = "It's time for your typing break!"
+        soundName = UILocalNotificationDefaultSoundName
+        if respondsToSelector("setCategory:") { category = snooze }
     }
 
     required init(coder aDecoder: NSCoder) {

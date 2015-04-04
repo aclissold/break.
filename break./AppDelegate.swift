@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var components = calendar.componentsInTimeZone(NSTimeZone.defaultTimeZone(), fromDate: NSDate())
             components.minute += 9
             let fireDate = calendar.dateFromComponents(components)!
-            let notification = TypingBreakNotification(date: fireDate)
+            let notification = TypingBreakNotification(date: fireDate, repeat: false)
 
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
 
