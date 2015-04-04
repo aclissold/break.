@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearance.setBackgroundImage(image, forBarMetrics: .Default)
         appearance.titleTextAttributes = [
             NSForegroundColorAttributeName: globalTintColor,
-            NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 17)
+            NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 17)!
         ]
 
         // Configure notifications.
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         if identifier == snooze {
             // Schedule a new notification 9 minutes from now.
-            let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+            let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
             var components = calendar.componentsInTimeZone(NSTimeZone.defaultTimeZone(), fromDate: NSDate())
             components.minute += 9
             let fireDate = calendar.dateFromComponents(components)!

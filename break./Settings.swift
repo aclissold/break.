@@ -30,16 +30,16 @@ struct Settings {
 
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setBool(Settings.silence, forKey: "silence")
-            defaults.setInteger(Settings.frequency.toRaw(), forKey: "frequency")
-            defaults.setInteger(Int(Settings.repeat.toRaw()), forKey: "repeat")
+            defaults.setInteger(Settings.frequency.rawValue, forKey: "frequency")
+            defaults.setInteger(Int(Settings.repeat.rawValue), forKey: "repeat")
             defaults.synchronize()
 
-            if UInt(defaults.integerForKey("repeat")) != Settings.repeat.toRaw() {
+            if UInt(defaults.integerForKey("repeat")) != Settings.repeat.rawValue {
                 fatalError("loss of precision")
             }
 
             if !Settings.silence {
-                scheduleNotifications(frequency: Settings.frequency.toRaw())
+                scheduleNotifications(frequency: Settings.frequency.rawValue)
             }
         }
     }
@@ -48,7 +48,7 @@ struct Settings {
 
 // Since these recur indefinitely, it's fine if they're scheduled in the past.
 private func scheduleNotifications(#frequency: Int) {
-    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
     let flags = NSCalendarUnit(UInt.max)
     var components = calendar.components(flags, fromDate: NSDate())
 

@@ -19,10 +19,10 @@ class BreakViewController: UITableViewController {
 
     let frequencies = [20: "20", 30: "30", 60: "60", 90: "90"]
     let repeats: [UInt: String] = [
-        NSCalendarUnit.DayCalendarUnit.toRaw(): "Daily",
-        NSCalendarUnit.WeekdayCalendarUnit.toRaw(): "Weekdays"]
+        NSCalendarUnit.DayCalendarUnit.rawValue: "Daily",
+        NSCalendarUnit.WeekdayCalendarUnit.rawValue: "Weekdays"]
 
-    let logo = UIImage(named: "Logo")
+    let logo = UIImage(named: "Logo")!
 
     // MARK: View Controller Lifecycle
 

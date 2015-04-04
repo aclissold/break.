@@ -19,7 +19,7 @@ class RepeatViewController: UITableViewController {
 
     override func viewDidLayoutSubviews() {
         let raw = UInt(NSUserDefaults.standardUserDefaults().integerForKey("repeat"))
-        let repeat = NSCalendarUnit.fromRaw(raw)!
+        let repeat = NSCalendarUnit(rawValue: raw)
         var indexPath: NSIndexPath!
         if repeat == .CalendarUnitDay {
             indexPath = NSIndexPath(forRow: 0, inSection: 0)

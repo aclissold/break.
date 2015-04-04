@@ -27,7 +27,7 @@ class BannerContainerViewController: UIViewController, ADBannerViewDelegate {
     }
 
     func addConstraint(format: String) {
-        let options = NSLayoutFormatOptions.fromRaw(0)!
+        let options = NSLayoutFormatOptions(rawValue: 0)
         let constraints = NSLayoutConstraint.constraintsWithVisualFormat(
             format, options: options, metrics: nil, views: ["bannerView": bannerView])
         view.addConstraints(constraints)

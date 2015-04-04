@@ -40,7 +40,7 @@ class FrequencyViewController: UITableViewController {
         if cell === previousCell { return }
 
         if indexPath.section == 0 {
-            Settings.frequency = Frequency.fromRaw(frequencies[indexPath.row])!
+            Settings.frequency = Frequency(rawValue: frequencies[indexPath.row])!
         }
 
         cell.accessoryType = .Checkmark
