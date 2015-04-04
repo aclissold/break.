@@ -19,6 +19,7 @@
 		22F0C13219EC3F0C00AD10C9 /* TypingBreakNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0C13119EC3F0C00AD10C9 /* TypingBreakNotification.swift */; };
 		22FC272A19C7FCB9004268E4 /* BannerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */; };
 		30DE13B395804240849C81CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E87386575D4EAFBE68D3FB /* libPods.a */; };
+		8C6FAFC426593B83AAF38BBA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E87386575D4EAFBE68D3FB /* libPods.a */; };
 		B50CA1FF1AD064050025B497 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50CA1FE1AD064050025B497 /* Constants.swift */; };
 		B528E5751AD051FF00F91D58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528E5741AD051FF00F91D58 /* Constants.swift */; };
 		B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */; };
@@ -63,7 +64,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08E6B19E6CA6442BBD2F0EDC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		22175A2C194FEDF300AA9DCA /* BreakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakViewController.swift; sourceTree = "<group>"; };
 		222EA5461983CD1600F9CE31 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		224D631B194DF65100698EDE /* break..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = break..app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,9 +80,11 @@
 		22F0C13119EC3F0C00AD10C9 /* TypingBreakNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingBreakNotification.swift; sourceTree = "<group>"; };
 		22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerContainerViewController.swift; sourceTree = "<group>"; };
 		74E87386575D4EAFBE68D3FB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7B1B1E01EBE1A5B6358A78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B50CA1FC1AD062350025B497 /* break..entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = break..entitlements; sourceTree = "<group>"; };
 		B50CA1FD1AD062600025B497 /* break. WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "break. WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		B50CA1FE1AD064050025B497 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B50CA2031AD06FDD0025B497 /* break. WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "break. WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		B528E5741AD051FF00F91D58 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5EDBD4F1ACFADE0002BC82D /* break. WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "break. WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EDBD521ACFADE0002BC82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		B5EDBD641ACFADE0002BC82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EDBD661ACFADE0002BC82D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		B5EDBD681ACFADE0002BC82D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3A0A2658F3B204B266D1711 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6FAFC426593B83AAF38BBA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +150,7 @@
 				B5EDBD621ACFADE0002BC82D /* break. WatchKit App */,
 				222EA5451983CD1600F9CE31 /* Frameworks */,
 				224D631C194DF65100698EDE /* Products */,
+				91565BA97CC5C62C22631C7E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,10 +185,18 @@
 			isa = PBXGroup;
 			children = (
 				22C5AF1319CE03A1007783ED /* break.-Bridging-Header.h */,
-				08E6B19E6CA6442BBD2F0EDC /* Pods.xcconfig */,
 				224D631F194DF65100698EDE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91565BA97CC5C62C22631C7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3A0A2658F3B204B266D1711 /* Pods.debug.xcconfig */,
+				8A7B1B1E01EBE1A5B6358A78 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B5EDBD501ACFADE0002BC82D /* break. WatchKit Extension */ = {
@@ -196,6 +209,7 @@
 				B5EDBD581ACFADE0002BC82D /* GlanceController.swift */,
 				B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */,
 				B5EDBD511ACFADE0002BC82D /* Supporting Files */,
+				B50CA2031AD06FDD0025B497 /* break. WatchKit Extension-Bridging-Header.h */,
 			);
 			path = "break. WatchKit Extension";
 			sourceTree = "<group>";
@@ -255,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5EDBD721ACFADE0002BC82D /* Build configuration list for PBXNativeTarget "break. WatchKit Extension" */;
 			buildPhases = (
+				23E6278B73BFD96190B79413 /* Check Pods Manifest.lock */,
 				B5EDBD4B1ACFADE0002BC82D /* Sources */,
 				B5EDBD4C1ACFADE0002BC82D /* Frameworks */,
 				B5EDBD4D1ACFADE0002BC82D /* Resources */,
+				47F3A8867CD769A66E94E901 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,7 +395,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23E6278B73BFD96190B79413 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		47F3A8867CD769A66E94E901 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8413EF1E528F441D9CD9085E /* Check Pods Manifest.lock */ = {
@@ -543,7 +589,7 @@
 		};
 		224D6338194DF65100698EDE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08E6B19E6CA6442BBD2F0EDC /* Pods.xcconfig */;
+			baseConfigurationReference = C3A0A2658F3B204B266D1711 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -565,7 +611,7 @@
 		};
 		224D6339194DF65100698EDE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08E6B19E6CA6442BBD2F0EDC /* Pods.xcconfig */;
+			baseConfigurationReference = 8A7B1B1E01EBE1A5B6358A78 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -586,7 +632,9 @@
 		};
 		B5EDBD6D1ACFADE0002BC82D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3A0A2658F3B204B266D1711 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "break. WatchKit Extension/break. WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -601,12 +649,16 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "break. WatchKit Extension/break. WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B5EDBD6E1ACFADE0002BC82D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A7B1B1E01EBE1A5B6358A78 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "break. WatchKit Extension/break. WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -618,6 +670,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "break. WatchKit Extension/break. WatchKit Extension-Bridging-Header.h";
 			};
 			name = Release;
 		};
