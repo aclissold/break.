@@ -14,7 +14,7 @@ class TypingBreakNotification: UILocalNotification {
         fireDate = date
         timeZone = NSTimeZone.defaultTimeZone()
         if (repeat) {
-            repeatInterval = Settings.repeat
+            repeatInterval = .WeekCalendarUnit
         }
         alertBody = "It's time for your typing break!"
         soundName = UILocalNotificationDefaultSoundName

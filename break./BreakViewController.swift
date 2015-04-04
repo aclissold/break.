@@ -22,7 +22,7 @@ class BreakViewController: UITableViewController {
     let frequencies = [20: "20", 30: "30", 60: "60", 90: "90"]
     let repeats: [UInt: String] = [
         NSCalendarUnit.DayCalendarUnit.rawValue: "Daily",
-        NSCalendarUnit.WeekdayCalendarUnit.rawValue: "Weekdays"]
+        NSCalendarUnit.CalendarUnitWeekday.rawValue: "Weekdays"]
 
     var numberOfSections = Settings.silence ? 1 : 2
     let logo = UIImage(named: "Logo")!

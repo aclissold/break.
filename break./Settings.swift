@@ -24,8 +24,8 @@ struct Settings {
         get {
             let rawValue = UInt(userDefaults.integerForKey("repeat"))
             if rawValue == 0 {
-                userDefaults.setInteger(Int(NSCalendarUnit.WeekdayCalendarUnit.rawValue), forKey: "repeat")
-                return NSCalendarUnit.WeekdayCalendarUnit
+                userDefaults.setInteger(Int(NSCalendarUnit.CalendarUnitWeekday.rawValue), forKey: "repeat")
+                return .CalendarUnitWeekday
             } else {
                 return NSCalendarUnit(rawValue: rawValue)
             }
@@ -58,20 +58,41 @@ struct Settings {
 
 // Since these recur indefinitely, it's fine if they're scheduled in the past.
 private func scheduleNotifications(#frequency: Int) {
-    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+    let calendar = NSCalendar.currentCalendar()
     let flags = NSCalendarUnit(UInt.max)
     var components = calendar.components(flags, fromDate: NSDate())
 
-    var minutes = 0
-    while minutes < 24*60 {
-        components.second = 0
-        components.minute = minutes % 60
-        components.hour   = minutes / 60
+    dayLoop: for i in 0...6 {
+        var minutes = 0
+        while minutes < 24*60 {
+            components.second = 0
+            components.minute = minutes % 60
+            components.hour   = minutes / 60
 
-        let fireDate = calendar.dateFromComponents(components)!
-        let notification = TypingBreakNotification(date: fireDate, repeat: true)
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            // Set fireDate to a Monday plus i additional days.
+            var fireDate = calendar.dateFromComponents(components)!
+            var comps = NSDateComponents()
+            while (!calendar.isDateInWeekend(fireDate)) { // rewind to Sunday if it's currently a weekday
+                comps.day = -1
+                fireDate = calendar.dateByAddingComponents(comps, toDate: fireDate, options: nil)!
+            }
+            while (calendar.isDateInWeekend(fireDate)) { // fast-forward to Monday
+                comps.day = 1
+                fireDate = calendar.dateByAddingComponents(comps, toDate: fireDate, options: nil)!
+            }
+            comps = NSDateComponents()
+            comps.day = -7
+            comps.day += i // adjust to the appropriate day of the week for this iteration of dayLoop
+            fireDate = calendar.dateByAddingComponents(comps, toDate: fireDate, options: nil)!
 
-        minutes += frequency
+            if (Settings.repeat == .WeekdayCalendarUnit && calendar.isDateInWeekend(fireDate)) {
+                break dayLoop
+            }
+
+            let notification = TypingBreakNotification(date: fireDate, repeat: true)
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+
+            minutes += frequency
+        }
     }
 }
