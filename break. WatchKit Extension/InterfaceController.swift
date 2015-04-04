@@ -35,5 +35,7 @@ class InterfaceController: WKInterfaceController {
         wormhole.passMessageObject(value, identifier: "watchDidUpdateSilence")
         userDefaults.setBool(value, forKey: "silence")
         userDefaults.synchronize()
+
+        WKInterfaceController.openParentApplication(["silence": value], reply: nil)
     }
 }

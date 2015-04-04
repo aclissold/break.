@@ -74,4 +74,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func application(application: UIApplication!, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        let silence = userInfo["silence"] as Bool
+        Settings.silence = silence
+        Settings.synchronize()
+    }
+
 }
