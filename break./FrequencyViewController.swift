@@ -19,7 +19,7 @@ class FrequencyViewController: UITableViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        let frequency = NSUserDefaults.standardUserDefaults().integerForKey("frequency")
+        let frequency = userDefaults.integerForKey("frequency")
         for (index, element) in enumerate(frequencies) {
             if element == frequency {
                 let indexPath = NSIndexPath(forRow: index, inSection: 0)
@@ -41,6 +41,7 @@ class FrequencyViewController: UITableViewController {
 
         if indexPath.section == 0 {
             Settings.frequency = Frequency(rawValue: frequencies[indexPath.row])!
+            Settings.synchronize()
         }
 
         cell.accessoryType = .Checkmark

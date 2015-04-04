@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let userDefaults = NSUserDefaults.standardUserDefaults()
+
 enum Frequency: Int {
     case Every20Minutes = 20
     case Every30Minutes = 30
@@ -17,26 +19,36 @@ enum Frequency: Int {
 }
 
 struct Settings {
-    static var silence:   Bool           = false                {didSet{synchronize()}}
-    static var frequency: Frequency      = .Every60Minutes      {didSet{synchronize()}}
-    static var repeat:    NSCalendarUnit = .CalendarUnitWeekday {didSet{synchronize()}}
+    static var silence:   Bool = userDefaults.boolForKey("silence")
+    // begin ugly
+    static var frequency: Frequency = Frequency(rawValue: userDefaults.integerForKey("frequency")) ?? .Every60Minutes
+    static var repeat:    NSCalendarUnit {
+        get {
+            let rawValue = UInt(userDefaults.integerForKey("repeat"))
+            if rawValue == 0 {
+                userDefaults.setInteger(Int(NSCalendarUnit.WeekdayCalendarUnit.rawValue), forKey: "repeat")
+                return NSCalendarUnit.WeekdayCalendarUnit
+            } else {
+                return NSCalendarUnit(rawValue: rawValue)
+            }
+        }
+        set {
+            userDefaults.setInteger(Int(newValue.rawValue), forKey: "repeat")
+        }
+    }
+    // end ugly
 
     private static let queue = dispatch_queue_create(nil, nil)
 
-    // Should only ever be called outside this file on first launch.
+    // Must be called after any property is modified.
     static func synchronize() {
         dispatch_async(queue) {
             UIApplication.sharedApplication().cancelAllLocalNotifications()
 
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setBool(Settings.silence, forKey: "silence")
-            defaults.setInteger(Settings.frequency.rawValue, forKey: "frequency")
-            defaults.setInteger(Int(Settings.repeat.rawValue), forKey: "repeat")
-            defaults.synchronize()
-
-            if UInt(defaults.integerForKey("repeat")) != Settings.repeat.rawValue {
-                fatalError("loss of precision")
-            }
+            userDefaults.setBool(Settings.silence, forKey: "silence")
+            userDefaults.setInteger(Settings.frequency.rawValue, forKey: "frequency")
+            userDefaults.setInteger(Int(Settings.repeat.rawValue), forKey: "repeat")
+            userDefaults.synchronize()
 
             if !Settings.silence {
                 scheduleNotifications(frequency: Settings.frequency.rawValue)

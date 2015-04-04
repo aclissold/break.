@@ -18,7 +18,7 @@ class RepeatViewController: UITableViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        let raw = UInt(NSUserDefaults.standardUserDefaults().integerForKey("repeat"))
+        let raw = UInt(userDefaults.integerForKey("repeat"))
         let repeat = NSCalendarUnit(rawValue: raw)
         var indexPath: NSIndexPath!
         if repeat == .CalendarUnitDay {
@@ -48,10 +48,13 @@ class RepeatViewController: UITableViewController {
         switch repeat {
         case "Daily":
             Settings.repeat = .CalendarUnitDay
+            Settings.synchronize()
         case "Weekdays":
             Settings.repeat = .CalendarUnitWeekday
+            Settings.synchronize()
         default:
             Settings.repeat = .CalendarUnitWeekday
+            Settings.synchronize()
         }
 
         cell.accessoryType = .Checkmark

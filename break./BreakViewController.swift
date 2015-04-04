@@ -28,13 +28,22 @@ class BreakViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
+    }
+
+    func configureView() {
         settingsTableView = tableView
         tableView.addParallaxWithImage(logo, andHeight: logo.size.height)
         navigationController!.navigationBarHidden = true
+
+        silenceSwitch.on = Settings.silence
+        frequencyLabel.text = "Every \(Settings.frequency.rawValue) minutes"
+        repeatLabel.text = repeats[Settings.repeat.rawValue]
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        configureView()
 
         UIView.animateWithDuration(0.4) {
             self.navigationController!.navigationBarHidden = true
@@ -53,17 +62,6 @@ class BreakViewController: UITableViewController {
         }
     }
 
-    override func viewDidLayoutSubviews() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let frequency = defaults.integerForKey("frequency")
-        let repeat = defaults.integerForKey("repeat")
-        let silence = defaults.boolForKey("silence")
-
-        silenceSwitch.on = silence
-        frequencyLabel.text = "Every \(frequency) minutes"
-        repeatLabel.text = repeats[UInt(repeat)]
-    }
-
     // MARK: UITableViewDelegate
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -73,7 +71,7 @@ class BreakViewController: UITableViewController {
     // MARK: UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Settings.silence ? 1 : 2
+        return Settings.silence.boolValue ? 1 : 2
     }
 
     // MARK: Actions
@@ -81,6 +79,7 @@ class BreakViewController: UITableViewController {
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
         let silence = sender.on
         Settings.silence = silence
+        Settings.synchronize()
         if silence {
             tableView.deleteSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
         } else {
