@@ -9,4 +9,3 @@
 //
 
 let userDefaults = NSUserDefaults(suiteName: "group.com.andrewclissold.break-")!
-let silenceChangedNotificationName = "silenceChangedNotification"

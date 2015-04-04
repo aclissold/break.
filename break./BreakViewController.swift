@@ -77,10 +77,13 @@ class BreakViewController: UITableViewController {
     // MARK: Actions
 
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
-        let silence = sender.on
-        Settings.silence = silence
+        Settings.silence = sender.on
         Settings.synchronize()
-        if silence {
+        toggleSilenceSwitch(sender.on)
+    }
+
+    func toggleSilenceSwitch(on: Bool) {
+        if on {
             tableView.deleteSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
         } else {
             tableView.insertSections(NSIndexSet(index: 1), withRowAnimation: .Fade)

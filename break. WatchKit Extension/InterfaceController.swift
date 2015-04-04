@@ -31,4 +31,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func silenceSwitchToggled(value: Bool) {
+        userDefaults.setBool(value, forKey: "silence")
+    }
 }
