@@ -91,7 +91,7 @@ class GlanceController: WKInterfaceController {
         case 90:
             var dates = [NSDate]()
             var minutes = 0
-            for hour in [0, 1, 3, 4, 6, 7, 9, 10] {
+            for hour in [0, 1, 3, 4, 6, 7, 9, 10, 12, 13, 15, 16, 18, 19, 21, 22] {
                 let components = NSDateComponents()
                 components.hour = hour
                 components.minute = 30 * (hour % 3) // 0, 30, 0, ...
