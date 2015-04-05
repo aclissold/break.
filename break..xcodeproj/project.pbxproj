@@ -20,6 +20,7 @@
 		22FC272A19C7FCB9004268E4 /* BannerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */; };
 		30DE13B395804240849C81CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E87386575D4EAFBE68D3FB /* libPods.a */; };
 		8C6FAFC426593B83AAF38BBA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E87386575D4EAFBE68D3FB /* libPods.a */; };
+		B500EDB51AD18C46000E3463 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B500EDB41AD18C46000E3463 /* Settings.bundle */; };
 		B50CA1FF1AD064050025B497 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50CA1FE1AD064050025B497 /* Constants.swift */; };
 		B528E5751AD051FF00F91D58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528E5741AD051FF00F91D58 /* Constants.swift */; };
 		B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */; };
@@ -80,6 +81,7 @@
 		22FC272919C7FCB9004268E4 /* BannerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerContainerViewController.swift; sourceTree = "<group>"; };
 		74E87386575D4EAFBE68D3FB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7B1B1E01EBE1A5B6358A78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B500EDB41AD18C46000E3463 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B50CA1FC1AD062350025B497 /* break..entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = break..entitlements; sourceTree = "<group>"; };
 		B50CA1FD1AD062600025B497 /* break. WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "break. WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		B50CA1FE1AD064050025B497 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		B528E5741AD051FF00F91D58 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5EDBD4F1ACFADE0002BC82D /* break. WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "break. WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EDBD521ACFADE0002BC82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5EDBD531ACFADE0002BC82D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B5EDBD531ACFADE0002BC82D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; name = PushNotificationPayload.apns; path = "break. WatchKit Extension/PushNotificationPayload.apns"; sourceTree = SOURCE_ROOT; };
 		B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		B5EDBD581ACFADE0002BC82D /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		224D631D194DF65100698EDE /* break. */ = {
 			isa = PBXGroup;
 			children = (
+				B5EDBD531ACFADE0002BC82D /* PushNotificationPayload.apns */,
 				B50CA1FC1AD062350025B497 /* break..entitlements */,
 				224D6324194DF65100698EDE /* Main.storyboard */,
 				B528E5741AD051FF00F91D58 /* Constants.swift */,
@@ -184,6 +187,7 @@
 			children = (
 				22C5AF1319CE03A1007783ED /* break.-Bridging-Header.h */,
 				224D631F194DF65100698EDE /* Info.plist */,
+				B500EDB41AD18C46000E3463 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				B5EDBD521ACFADE0002BC82D /* Info.plist */,
-				B5EDBD531ACFADE0002BC82D /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				224D6326194DF65100698EDE /* Main.storyboard in Resources */,
+				B500EDB51AD18C46000E3463 /* Settings.bundle in Resources */,
 				224D6328194DF65100698EDE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
