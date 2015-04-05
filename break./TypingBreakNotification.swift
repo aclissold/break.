@@ -18,7 +18,7 @@ class TypingBreakNotification: UILocalNotification {
         }
         alertTitle = "It’s time!"
         alertBody = "It’s time for your typing break!"
-        soundName = UILocalNotificationDefaultSoundName
+        soundName = "Typing Break Alert.caf"
         if respondsToSelector("setCategory:") { category = snooze }
     }
 

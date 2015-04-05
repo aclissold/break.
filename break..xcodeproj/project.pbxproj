@@ -21,6 +21,7 @@
 		30DE13B395804240849C81CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E87386575D4EAFBE68D3FB /* libPods.a */; };
 		8C6FAFC426593B83AAF38BBA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E87386575D4EAFBE68D3FB /* libPods.a */; };
 		B500EDB51AD18C46000E3463 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B500EDB41AD18C46000E3463 /* Settings.bundle */; };
+		B500EDB91AD19977000E3463 /* Typing Break Alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = B500EDB81AD19977000E3463 /* Typing Break Alert.caf */; };
 		B50CA1FF1AD064050025B497 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50CA1FE1AD064050025B497 /* Constants.swift */; };
 		B528E5751AD051FF00F91D58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528E5741AD051FF00F91D58 /* Constants.swift */; };
 		B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */; };
@@ -82,6 +83,7 @@
 		74E87386575D4EAFBE68D3FB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7B1B1E01EBE1A5B6358A78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B500EDB41AD18C46000E3463 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B500EDB81AD19977000E3463 /* Typing Break Alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Typing Break Alert.caf"; sourceTree = "<group>"; };
 		B50CA1FC1AD062350025B497 /* break..entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = break..entitlements; sourceTree = "<group>"; };
 		B50CA1FD1AD062600025B497 /* break. WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "break. WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		B50CA1FE1AD064050025B497 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				22C5AF1319CE03A1007783ED /* break.-Bridging-Header.h */,
 				224D631F194DF65100698EDE /* Info.plist */,
+				B500EDB81AD19977000E3463 /* Typing Break Alert.caf */,
 				B500EDB41AD18C46000E3463 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
@@ -359,6 +362,7 @@
 			files = (
 				224D6326194DF65100698EDE /* Main.storyboard in Resources */,
 				B500EDB51AD18C46000E3463 /* Settings.bundle in Resources */,
+				B500EDB91AD19977000E3463 /* Typing Break Alert.caf in Resources */,
 				224D6328194DF65100698EDE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
