@@ -40,7 +40,7 @@ class BreakViewController: UITableViewController {
         navigationController!.navigationBarHidden = true
 
         silenceSwitch.on = Settings.silence
-        frequencyLabel.text = "Every \(Settings.frequency.rawValue) minutes"
+        frequencyLabel.text = "Every \(Settings.frequency.rawValue) Minutes"
         repeatLabel.text = repeats[Settings.repeat.rawValue]
 
 //        TODO: figure out why this crashes the app
