@@ -16,6 +16,7 @@ class GlanceController: WKInterfaceController {
     @IBOutlet weak var typingLabel: WKInterfaceLabel!
     @IBOutlet weak var breakLabel: WKInterfaceLabel!
     @IBOutlet weak var silenceLabel: WKInterfaceLabel!
+    @IBOutlet weak var mondayLabel: WKInterfaceLabel!
 
     var calendar = NSCalendar.currentCalendar()
 
@@ -36,11 +37,9 @@ class GlanceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         if (userDefaults.boolForKey("silence")) {
-            timer.setHidden(true)
-            nextLabel.setHidden(true)
-            typingLabel.setHidden(true)
-            breakLabel.setHidden(true)
-            silenceLabel.setHidden(false)
+            showSilence()
+        } else if shouldShowMonday() {
+            showMonday()
         } else {
             setUpTimer()
         }
@@ -49,6 +48,27 @@ class GlanceController: WKInterfaceController {
     override func didDeactivate() {
         timer.stop()
         super.didDeactivate()
+    }
+
+    func showSilence() {
+        timer.setHidden(true)
+        nextLabel.setHidden(true)
+        typingLabel.setHidden(true)
+        breakLabel.setHidden(true)
+        silenceLabel.setHidden(false)
+    }
+
+    func shouldShowMonday() -> Bool {
+        let rawValue = UInt(userDefaults.integerForKey("repeat"))
+        let weekdaysOnly = NSCalendarUnit(rawValue: rawValue) == .WeekdayCalendarUnit
+        let isWeekend = NSCalendar.currentCalendar().isDateInWeekend(NSDate())
+
+        return weekdaysOnly && isWeekend
+    }
+
+    func showMonday() {
+        timer.setHidden(true)
+        mondayLabel.setHidden(false)
     }
 
     func setUpTimer() {
