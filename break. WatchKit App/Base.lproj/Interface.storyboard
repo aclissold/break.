@@ -27,12 +27,28 @@
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="break__WatchKit_App" customModuleProvider="target">
+                <glanceController spacing="0.0" topTemplateType="groupLeftLarge" id="0uZ-2p-rRc" customClass="GlanceController" customModule="break__WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="Y5I-3k-bfo">
+                            <items>
+                                <imageView alignment="left" image="GlanceIcon" id="mMK-0j-T1d"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Next" id="by6-KO-DTF"/>
+                        <label alignment="left" text="typing" id="YO6-fJ-nng"/>
+                        <label alignment="left" text="break" id="caW-jw-8gI"/>
+                        <group alignment="left" id="uMV-ZW-MV3">
+                            <items>
+                                <timer width="136" alignment="center" verticalAlignment="center" previewedSeconds="5025" id="qfe-If-zIb">
+                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="45"/>
+                                </timer>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="timer" destination="qfe-If-zIb" id="oOM-AA-QZB"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>

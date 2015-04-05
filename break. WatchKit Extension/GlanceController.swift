@@ -12,20 +12,20 @@ import Foundation
 
 class GlanceController: WKInterfaceController {
 
+    @IBOutlet weak var timer: WKInterfaceTimer!
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-    }
 
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+        let calendar = NSCalendar.currentCalendar()
+        let today = NSDate()
+        let date = calendar.dateByAddingUnit(.SecondCalendarUnit, value: 60, toDate: today, options: NSCalendarOptions.SearchBackwards)!
+        timer.setDate(date)
+        timer.start()
     }
 
 }
