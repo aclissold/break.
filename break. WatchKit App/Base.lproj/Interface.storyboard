@@ -42,12 +42,25 @@
                                 <timer width="136" alignment="center" verticalAlignment="center" previewedSeconds="5025" id="qfe-If-zIb">
                                     <fontDescription key="font" type="system" weight="ultraLight" pointSize="45"/>
                                 </timer>
+                                <label alignment="left" hidden="YES" text="Silence On" numberOfLines="0" id="tBl-YS-oBX">
+                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="44"/>
+                                    <variation key="device=watch38mm">
+                                        <fontDescription key="font" type="system" weight="ultraLight" pointSize="44"/>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <fontDescription key="font" type="system" weight="ultraLight" pointSize="51"/>
+                                    </variation>
+                                </label>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
+                        <outlet property="breakLabel" destination="caW-jw-8gI" id="43x-tC-NEQ"/>
+                        <outlet property="nextLabel" destination="by6-KO-DTF" id="gpB-6d-QtR"/>
+                        <outlet property="silenceLabel" destination="tBl-YS-oBX" id="Kim-XS-06o"/>
                         <outlet property="timer" destination="qfe-If-zIb" id="oOM-AA-QZB"/>
+                        <outlet property="typingLabel" destination="YO6-fJ-nng" id="qtX-ap-O0T"/>
                     </connections>
                 </glanceController>
             </objects>

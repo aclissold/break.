@@ -12,6 +12,10 @@ import Foundation
 class GlanceController: WKInterfaceController {
 
     @IBOutlet weak var timer: WKInterfaceTimer!
+    @IBOutlet weak var nextLabel: WKInterfaceLabel!
+    @IBOutlet weak var typingLabel: WKInterfaceLabel!
+    @IBOutlet weak var breakLabel: WKInterfaceLabel!
+    @IBOutlet weak var silenceLabel: WKInterfaceLabel!
 
     var calendar = NSCalendar.currentCalendar()
 
@@ -31,7 +35,15 @@ class GlanceController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
-        setUpTimer()
+        if (userDefaults.boolForKey("silence")) {
+            timer.setHidden(true)
+            nextLabel.setHidden(true)
+            typingLabel.setHidden(true)
+            breakLabel.setHidden(true)
+            silenceLabel.setHidden(false)
+        } else {
+            setUpTimer()
+        }
     }
 
     override func didDeactivate() {
@@ -70,6 +82,7 @@ class GlanceController: WKInterfaceController {
         default:
             date = nil
         }
+
         timer.setDate(date)
         timer.start()
     }
