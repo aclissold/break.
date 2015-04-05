@@ -26,7 +26,6 @@
 		B528E5751AD051FF00F91D58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528E5741AD051FF00F91D58 /* Constants.swift */; };
 		B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */; };
 		B5EDBD591ACFADE0002BC82D /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD581ACFADE0002BC82D /* GlanceController.swift */; };
-		B5EDBD5B1ACFADE0002BC82D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */; };
 		B5EDBD5F1ACFADE0002BC82D /* break. WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = B5EDBD5E1ACFADE0002BC82D /* break. WatchKit App.app */; };
 		B5EDBD671ACFADE0002BC82D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EDBD651ACFADE0002BC82D /* Interface.storyboard */; };
 		B5EDBD691ACFADE0002BC82D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EDBD681ACFADE0002BC82D /* Images.xcassets */; };
@@ -94,7 +93,6 @@
 		B5EDBD531ACFADE0002BC82D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; name = PushNotificationPayload.apns; path = "break. WatchKit Extension/PushNotificationPayload.apns"; sourceTree = SOURCE_ROOT; };
 		B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		B5EDBD581ACFADE0002BC82D /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5EDBD5E1ACFADE0002BC82D /* break. WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "break. WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EDBD641ACFADE0002BC82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EDBD661ACFADE0002BC82D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				B50CA1FE1AD064050025B497 /* Constants.swift */,
 				B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */,
 				B5EDBD581ACFADE0002BC82D /* GlanceController.swift */,
-				B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */,
 				B5EDBD511ACFADE0002BC82D /* Supporting Files */,
 				B50CA2031AD06FDD0025B497 /* break. WatchKit Extension-Bridging-Header.h */,
 			);
@@ -371,7 +368,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5EDBD5B1ACFADE0002BC82D /* Images.xcassets in Resources */,
 				B5EDBD5F1ACFADE0002BC82D /* break. WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
