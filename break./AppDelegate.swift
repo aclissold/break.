@@ -39,9 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if application.respondsToSelector("registerUserNotificationSettings:") {
             // Enable the Snooze action on iOS 8+.
             let snoozeAction = UIMutableUserNotificationAction()
-            snoozeAction.identifier = snooze
             snoozeAction.title = snooze
+            snoozeAction.identifier = snooze
             snoozeAction.activationMode = .Background
+            snoozeAction.authenticationRequired = false
 
             let category = UIMutableUserNotificationCategory()
             category.identifier = snooze

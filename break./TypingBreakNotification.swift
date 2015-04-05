@@ -16,7 +16,8 @@ class TypingBreakNotification: UILocalNotification {
         if (repeat) {
             repeatInterval = .WeekCalendarUnit
         }
-        alertBody = "It's time for your typing break!"
+        alertTitle = "It’s time!"
+        alertBody = "It’s time for your typing break!"
         soundName = UILocalNotificationDefaultSoundName
         if respondsToSelector("setCategory:") { category = snooze }
     }

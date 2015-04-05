@@ -23,7 +23,6 @@
 		B50CA1FF1AD064050025B497 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50CA1FE1AD064050025B497 /* Constants.swift */; };
 		B528E5751AD051FF00F91D58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528E5741AD051FF00F91D58 /* Constants.swift */; };
 		B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */; };
-		B5EDBD571ACFADE0002BC82D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD561ACFADE0002BC82D /* NotificationController.swift */; };
 		B5EDBD591ACFADE0002BC82D /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDBD581ACFADE0002BC82D /* GlanceController.swift */; };
 		B5EDBD5B1ACFADE0002BC82D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */; };
 		B5EDBD5F1ACFADE0002BC82D /* break. WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = B5EDBD5E1ACFADE0002BC82D /* break. WatchKit App.app */; };
@@ -90,7 +89,6 @@
 		B5EDBD521ACFADE0002BC82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EDBD531ACFADE0002BC82D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		B5EDBD561ACFADE0002BC82D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		B5EDBD581ACFADE0002BC82D /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5EDBD5E1ACFADE0002BC82D /* break. WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "break. WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,7 +203,6 @@
 				B50CA1FD1AD062600025B497 /* break. WatchKit Extension.entitlements */,
 				B50CA1FE1AD064050025B497 /* Constants.swift */,
 				B5EDBD541ACFADE0002BC82D /* InterfaceController.swift */,
-				B5EDBD561ACFADE0002BC82D /* NotificationController.swift */,
 				B5EDBD581ACFADE0002BC82D /* GlanceController.swift */,
 				B5EDBD5A1ACFADE0002BC82D /* Images.xcassets */,
 				B5EDBD511ACFADE0002BC82D /* Supporting Files */,
@@ -466,7 +463,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5EDBD571ACFADE0002BC82D /* NotificationController.swift in Sources */,
 				B5EDBD551ACFADE0002BC82D /* InterfaceController.swift in Sources */,
 				B5EDBD591ACFADE0002BC82D /* GlanceController.swift in Sources */,
 				B50CA1FF1AD064050025B497 /* Constants.swift in Sources */,

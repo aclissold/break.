@@ -2,15 +2,15 @@
     "aps": {
         "alert": {
             "body": "It’s time for your typing break!",
-            "title": "Optional title"
+            "title": "It’s time!"
         },
-        "category": "myCategory"
+        "category": "Snooze"
     },
 
     "WatchKit Simulator Actions": [
         {
             "title": "Snooze",
-            "identifier": "snoozeAction"
+            "identifier": "Snooze"
         }
     ],
 }

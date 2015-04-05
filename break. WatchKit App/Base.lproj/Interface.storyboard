@@ -69,13 +69,13 @@
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
-                <notificationController animationDuration="1" id="YCC-NB-fut">
+                <notificationController id="YCC-NB-fut">
                     <items>
                         <label height="38" alignment="left" text="Alert Label" numberOfLines="0" id="XkS-y5-khE">
                             <variation key="device=watch42mm" height="50"/>
                         </label>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
+                    <notificationCategory key="notificationCategory" identifier="Snooze" id="JfB-70-Muf">
                         <color key="sashColor" red="0.40784313725490196" green="0.082352941176470587" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </notificationCategory>
                     <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
