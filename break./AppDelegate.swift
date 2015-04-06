@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        theme()
+        configureNotifications(application)
+
+        return true
+    }
+
+    func theme() {
         // Create a translucent background image for the navigation bar.
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
@@ -25,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        // Theme.
         let appearance = UINavigationBar.appearance()
         appearance.barTintColor = UIColor(white: 1, alpha: 0.2)
         appearance.alpha = 0.2
@@ -34,10 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSForegroundColorAttributeName: globalTintColor,
             NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 17)!
         ]
+    }
 
-        // Configure notifications.
+    func configureNotifications(application: UIApplication) {
         if application.respondsToSelector("registerUserNotificationSettings:") {
-            // Enable the Snooze action on iOS 8+.
             let snoozeAction = UIMutableUserNotificationAction()
             snoozeAction.title = snooze
             snoozeAction.identifier = snooze
@@ -55,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         Settings.synchronize()
-
-        return true
     }
 
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?,
