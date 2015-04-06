@@ -63,6 +63,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Settings.synchronize()
     }
 
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        Settings.synchronize()
+    }
+
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?,
     forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         if identifier == snooze {
