@@ -48,7 +48,8 @@ struct Settings {
             userDefaults.setInteger(Int(Settings.repeat.rawValue), forKey: "repeat")
             userDefaults.synchronize()
 
-            if !Settings.silence {
+            let notificationsEnabled = UIApplication.sharedApplication().currentUserNotificationSettings().types & .Alert != nil
+            if !Settings.silence && notificationsEnabled {
                 scheduleNotifications(frequency: Settings.frequency.rawValue)
             }
         }
