@@ -17,8 +17,6 @@ class BreakViewController: UITableViewController {
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var repeatLabel: UILabel!
 
-    let wormhole = MMWormhole(applicationGroupIdentifier: suiteName, optionalDirectory: "wormhole")
-
     let frequencies = [20: "20", 30: "30", 60: "60", 90: "90"]
     let repeats: [UInt: String] = [
         NSCalendarUnit.DayCalendarUnit.rawValue: "Daily",
@@ -91,7 +89,6 @@ class BreakViewController: UITableViewController {
     // MARK: Actions
 
     @IBAction func silenceSwitchToggled(sender: UISwitch) {
-        wormhole.passMessageObject(sender.on, identifier: "phoneDidUpdateSilence")
         Settings.silence = sender.on
         Settings.synchronize()
         updateTableViewForSilenceState(sender.on)

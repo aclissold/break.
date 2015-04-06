@@ -1,15 +1,10 @@
 PODS:
   - APParallaxHeader (0.1.6)
-  - MMWormhole (1.1.1):
-    - MMWormhole/Core (= 1.1.1)
-  - MMWormhole/Core (1.1.1)
 
 DEPENDENCIES:
   - APParallaxHeader (~> 0.1.6)
-  - MMWormhole (~> 1.1.1)
 
 SPEC CHECKSUMS:
   APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
-  MMWormhole: 941cd168b4afd6073f883b82944d6eded4e00203
 
 COCOAPODS: 0.36.3

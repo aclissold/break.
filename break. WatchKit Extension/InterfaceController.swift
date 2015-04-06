@@ -14,8 +14,6 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet weak var silenceSwitch: WKInterfaceSwitch!
 
-    let wormhole = MMWormhole(applicationGroupIdentifier: suiteName, optionalDirectory: "wormhole")
-
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -23,16 +21,7 @@ class InterfaceController: WKInterfaceController {
         silenceSwitch.setOn(silence)
     }
 
-    override func willActivate() {
-        super.willActivate()
-
-        wormhole.listenForMessageWithIdentifier("phoneDidUpdateSilence", listener: { (messageObject) in
-            self.silenceSwitch.setOn(messageObject as Bool)
-        })
-    }
-
     @IBAction func silenceSwitchToggled(value: Bool) {
-        wormhole.passMessageObject(value, identifier: "watchDidUpdateSilence")
         userDefaults.setBool(value, forKey: "silence")
         userDefaults.synchronize()
 
