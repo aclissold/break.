@@ -40,17 +40,6 @@ class BreakViewController: UITableViewController {
         silenceSwitch.on = Settings.silence
         frequencyLabel.text = "Every \(Settings.frequency.rawValue) Minutes"
         repeatLabel.text = repeats[Settings.repeat.rawValue]
-
-//        TODO: figure out why this crashes the app
-//        wormhole.listenForMessageWithIdentifier("watchDidUpdateSilence", listener: { (messageObject) in
-//            let on = messageObject as Bool
-//
-//            Settings.silence = on
-//            self.silenceSwitch.setOn(on, animated: true)
-//            // Intentionally not calling Settings.synchronize() since the WatchKit extension handles this
-//
-//            self.updateTableViewForSilenceState(on)
-//        })
     }
 
     override func viewWillAppear(animated: Bool) {
