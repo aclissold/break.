@@ -46,6 +46,8 @@ struct Settings {
         userDefaults.setInteger(Int(Settings.repeat.rawValue), forKey: "repeat")
         userDefaults.synchronize()
 
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+
         let notificationsEnabled = UIApplication.sharedApplication().currentUserNotificationSettings().types & .Alert != nil
         if !Settings.silence && notificationsEnabled {
             backgroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithName("scheduleNotifications", expirationHandler: {
@@ -65,8 +67,6 @@ private func scheduleNotifications(#frequency: Int) {
     let calendar = NSCalendar.currentCalendar()
     let flags = NSCalendarUnit(UInt.max)
     var components = calendar.components(flags, fromDate: NSDate())
-
-    UIApplication.sharedApplication().cancelAllLocalNotifications()
 
     dayLoop: for i in 0...6 {
         var minutes = 0
