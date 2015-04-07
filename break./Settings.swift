@@ -70,21 +70,20 @@ private func scheduleNotifications(#frequency: Int) {
             components.minute = minutes % 60
             components.hour   = minutes / 60
 
-            // Set fireDate to a Monday plus i additional days.
+            // Set fireDate to a past Monday plus i additional days.
             var fireDate = calendar.dateFromComponents(components)!
-            var comps = NSDateComponents()
+            var adjustment = NSDateComponents()
             while (!calendar.isDateInWeekend(fireDate)) { // rewind to Sunday if it's currently a weekday
-                comps.day = -1
-                fireDate = calendar.dateByAddingComponents(comps, toDate: fireDate, options: nil)!
+                adjustment.day = -1
+                fireDate = calendar.dateByAddingComponents(adjustment, toDate: fireDate, options: nil)!
             }
             while (calendar.isDateInWeekend(fireDate)) { // fast-forward to Monday
-                comps.day = 1
-                fireDate = calendar.dateByAddingComponents(comps, toDate: fireDate, options: nil)!
+                adjustment.day = 1
+                fireDate = calendar.dateByAddingComponents(adjustment, toDate: fireDate, options: nil)!
             }
-            comps = NSDateComponents()
-            comps.day = -7
-            comps.day += i // adjust to the appropriate day of the week for this iteration of dayLoop
-            fireDate = calendar.dateByAddingComponents(comps, toDate: fireDate, options: nil)!
+            adjustment.day = -7
+            adjustment.day += i // adjust to the appropriate day of the week for this iteration of dayLoop
+            fireDate = calendar.dateByAddingComponents(adjustment, toDate: fireDate, options: nil)!
 
             if (Settings.repeat == .CalendarUnitWeekday && calendar.isDateInWeekend(fireDate)) {
                 break dayLoop
