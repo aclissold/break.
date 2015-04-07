@@ -16,6 +16,7 @@ enum Frequency: Int {
     case Every90Minutes = 90
 }
 
+private var backgroundTask = UIBackgroundTaskInvalid
 struct Settings {
     static var silence:   Bool = userDefaults.boolForKey("silence")
     // begin ugly
@@ -36,25 +37,27 @@ struct Settings {
     }
     // end ugly
 
-    private static let queue = dispatch_queue_create(nil, nil)
+    private static let queue = dispatch_queue_create("scheduling", nil)
 
     // Must be called after any property is modified.
     static func synchronize() {
-        dispatch_async(queue) {
-            UIApplication.sharedApplication().cancelAllLocalNotifications()
+        userDefaults.setBool(Settings.silence, forKey: "silence")
+        userDefaults.setInteger(Settings.frequency.rawValue, forKey: "frequency")
+        userDefaults.setInteger(Int(Settings.repeat.rawValue), forKey: "repeat")
+        userDefaults.synchronize()
 
-            userDefaults.setBool(Settings.silence, forKey: "silence")
-            userDefaults.setInteger(Settings.frequency.rawValue, forKey: "frequency")
-            userDefaults.setInteger(Int(Settings.repeat.rawValue), forKey: "repeat")
-            userDefaults.synchronize()
+        let notificationsEnabled = UIApplication.sharedApplication().currentUserNotificationSettings().types & .Alert != nil
+        if !Settings.silence && notificationsEnabled {
+            backgroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithName("scheduleNotifications", expirationHandler: {
+                UIApplication.sharedApplication().endBackgroundTask(backgroundTask)
+                backgroundTask = UIBackgroundTaskInvalid
+            })
 
-            let notificationsEnabled = UIApplication.sharedApplication().currentUserNotificationSettings().types & .Alert != nil
-            if !Settings.silence && notificationsEnabled {
+            dispatch_async(queue) {
                 scheduleNotifications(frequency: Settings.frequency.rawValue)
             }
         }
     }
-
 }
 
 // Since these recur indefinitely, it's fine if they're scheduled in the past.
@@ -62,6 +65,8 @@ private func scheduleNotifications(#frequency: Int) {
     let calendar = NSCalendar.currentCalendar()
     let flags = NSCalendarUnit(UInt.max)
     var components = calendar.components(flags, fromDate: NSDate())
+
+    UIApplication.sharedApplication().cancelAllLocalNotifications()
 
     dayLoop: for i in 0...6 {
         var minutes = 0
@@ -95,4 +100,6 @@ private func scheduleNotifications(#frequency: Int) {
             minutes += frequency
         }
     }
+    UIApplication.sharedApplication().endBackgroundTask(backgroundTask)
+    backgroundTask = UIBackgroundTaskInvalid
 }
