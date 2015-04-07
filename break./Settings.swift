@@ -86,7 +86,7 @@ private func scheduleNotifications(#frequency: Int) {
             comps.day += i // adjust to the appropriate day of the week for this iteration of dayLoop
             fireDate = calendar.dateByAddingComponents(comps, toDate: fireDate, options: nil)!
 
-            if (Settings.repeat == .WeekdayCalendarUnit && calendar.isDateInWeekend(fireDate)) {
+            if (Settings.repeat == .CalendarUnitWeekday && calendar.isDateInWeekend(fireDate)) {
                 break dayLoop
             }
 

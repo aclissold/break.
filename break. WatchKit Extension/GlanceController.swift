@@ -60,7 +60,7 @@ class GlanceController: WKInterfaceController {
 
     func shouldShowMonday() -> Bool {
         let rawValue = UInt(userDefaults.integerForKey("repeat"))
-        let weekdaysOnly = NSCalendarUnit(rawValue: rawValue) == .WeekdayCalendarUnit
+        let weekdaysOnly = NSCalendarUnit(rawValue: rawValue) == .CalendarUnitWeekday
         let isWeekend = NSCalendar.currentCalendar().isDateInWeekend(NSDate())
 
         return weekdaysOnly && isWeekend
@@ -78,16 +78,16 @@ class GlanceController: WKInterfaceController {
         var date: NSDate!
         switch (frequency) {
         case 20:
-            let date1 = calendar.nextDateAfterDate(now, matchingUnit: .MinuteCalendarUnit, value: 0, options: .MatchStrictly)!
-            let date2 = calendar.nextDateAfterDate(now, matchingUnit: .MinuteCalendarUnit, value: 20, options: .MatchStrictly)!
-            let date3 = calendar.nextDateAfterDate(now, matchingUnit: .MinuteCalendarUnit, value: 40, options: .MatchStrictly)!
+            let date1 = calendar.nextDateAfterDate(now, matchingUnit: .CalendarUnitMinute, value: 0, options: .MatchStrictly)!
+            let date2 = calendar.nextDateAfterDate(now, matchingUnit: .CalendarUnitMinute, value: 20, options: .MatchStrictly)!
+            let date3 = calendar.nextDateAfterDate(now, matchingUnit: .CalendarUnitMinute, value: 40, options: .MatchStrictly)!
             date = soonest([date1, date2, date3])
         case 30:
-            let date1 = calendar.nextDateAfterDate(now, matchingUnit: .MinuteCalendarUnit, value: 0, options: .MatchStrictly)!
-            let date2 = calendar.nextDateAfterDate(now, matchingUnit: .MinuteCalendarUnit, value: 30, options: .MatchStrictly)!
+            let date1 = calendar.nextDateAfterDate(now, matchingUnit: .CalendarUnitMinute, value: 0, options: .MatchStrictly)!
+            let date2 = calendar.nextDateAfterDate(now, matchingUnit: .CalendarUnitMinute, value: 30, options: .MatchStrictly)!
             date = soonest([date1, date2])
         case 60:
-            date = calendar.nextDateAfterDate(now, matchingUnit: .MinuteCalendarUnit, value: 0, options: .MatchStrictly)!
+            date = calendar.nextDateAfterDate(now, matchingUnit: .CalendarUnitMinute, value: 0, options: .MatchStrictly)!
         case 90:
             var dates = [NSDate]()
             var minutes = 0
