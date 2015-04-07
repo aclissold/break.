@@ -59,8 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let notificationSettings = UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: categories)
             application.registerUserNotificationSettings(notificationSettings)
         }
-
-        Settings.synchronize()
     }
 
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
